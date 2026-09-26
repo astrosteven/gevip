@@ -1,38 +1,60 @@
-# GEVIP website (v2, work in progress)
+# GEVIP website — testing and feedback
 
-A rebuild of the Galaxy Evolution VIP site (https://sites.utexas.edu/vip/).
+This is an updated website for Galaxy Evolution VIP at UT Austin. It introduces the program, its people, student capstone projects, and the research timeline.
 
-No build tools required — it's plain HTML, CSS, and JS. Open `index.html`
-in a browser to preview it, or use a local server (see below).
+**The website is still a work in progress. Please try it out and share your feedback!** We would especially appreciate comments on readability, navigation, photos, project cards, and how the site works on different screen sizes.
 
-## Structure
+## Download and open the website
 
+### Option 1: Download ZIP — easiest
+
+1. Open https://github.com/yuni1218/gevip-website.
+2. Click the green **Code** button, then **Download ZIP**.
+3. Extract the downloaded ZIP:
+   - **Mac:** double-click the ZIP file.
+   - **Windows:** right-click it and select **Extract All**.
+4. Open the extracted folder.
+5. Double-click `index.html` to open the website in your browser. You can also right-click it and choose **Open With → Chrome, Firefox, Safari, or Edge**.
+
+If the HTML file is still named `gevip_cosmic_atlas_v3.html`, open that file instead.
+
+**Keep the HTML file and the `images` folder together.** Opening the HTML while it is still inside the ZIP, or moving it away from the images, may prevent photos from loading.
+
+### Option 2: Clone with Git
+
+If you have Git installed, open Terminal or PowerShell and run:
+
+```bash
+git clone https://github.com/yuni1218/gevip-website.git
+cd gevip-website
 ```
-index.html       # all page content
-css/style.css    # all styling
-js/main.js       # mobile nav toggle
-images/          # put photos/logos here, then reference as images/filename.jpg
+
+Then open `index.html` from that folder in your browser.
+
+To download later updates, run this command inside the repository folder:
+
+```bash
+git pull
 ```
 
-## What's placeholder right now
+If you used the ZIP option, download and extract a fresh ZIP to get the latest version.
 
-Search the code for `PLACEHOLDER` to find everything that needs real
-content: project cards, staff photos/names, FAQ answers, and a couple
-of "link to a page that doesn't exist yet" spots.
+### Optional: Run a local server
 
-## Previewing locally
+You can also preview the site using Python. From the repository folder, run:
 
-Any of these work:
+```bash
+python3 -m http.server 8000
+```
 
-- Just double-click `index.html` to open it in a browser.
-- Or, from this folder, run a tiny local server so relative paths
-  behave exactly like they will on the live site:
-  ```
-  python3 -m http.server 8000
-  ```
-  then visit http://localhost:8000
+On Windows, try this if `python3` is not recognized:
 
-## Deploying
+```powershell
+py -m http.server 8000
+```
 
-This is set up to be hosted with GitHub Pages directly from this repo
-(see the main setup instructions for how to turn that on).
+Keep the terminal open and visit:
+
+http://localhost:8000
+
+If you see a file listing, click the HTML file. Press **Ctrl+C** in the terminal when you are finished to stop the server.
