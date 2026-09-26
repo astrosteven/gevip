@@ -797,6 +797,16 @@
     .restored-galaxy .node-label{font-size:14px;letter-spacing:0;margin-top:10px}
     .restored-galaxy .research-node{width:100px;height:100px;text-decoration:none}
     @media(max-width:1020px){.restored-galaxy{position:relative;inset:auto;min-height:380px;opacity:1}.hero-copy{padding-top:20px}}
+      #capstoneGrid .project{text-align:left;color:inherit;font-family:inherit}
+    #capstoneGrid .project:focus-visible{outline:3px solid #dac8ff;outline-offset:5px}
+    #capstoneDialog{width:min(680px,90vw);max-height:85vh;overflow:auto;padding:30px;border:1px solid #65517e;border-radius:24px;background:#100a20;color:#eee8ff}
+    #capstoneDialog::backdrop{background:rgba(0,0,0,.75);backdrop-filter:blur(8px)}
+    #capstoneDialog h3{font-size:1.7rem;margin:20px 0}
+    #capstoneDialog .project-description{white-space:pre-line;line-height:1.7}
+    #closeCapstone{display:block;margin-left:auto;background:#dac8ff;color:#211133;border:0;border-radius:20px;padding:10px 18px;font:inherit;cursor:pointer}
+    #capstoneGrid.atlas-many{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;min-height:0}
+    #capstoneGrid.atlas-many .project{position:relative;inset:auto;width:auto}
+    #capstoneGrid.atlas-many .atlas-center,#capstoneGrid.atlas-many .atlas-ring{display:none}
   </style>
 </head>
 
@@ -870,8 +880,14 @@
           <div><div class="section-kicker">Student research</div><h2>Capstone projects</h2></div>
           <p class="section-intro">Research questions, methods, and results from individual student projects.</p>
         </div>
-        <div class="capstone-grid" id="capstoneGrid"></div>
-        <p class="empty-state" id="projectEmpty">Capstone project descriptions will be added here.</p>
+        <div class="atlas" id="capstoneGrid" aria-label="Capstone projects">
+          <div class="atlas-ring r1" aria-hidden="true"></div>
+          <div class="atlas-ring r2" aria-hidden="true"></div>
+          <div class="atlas-ring r3" aria-hidden="true"></div>
+          <div class="atlas-center"><span>Galaxy<br>Evolution<br>VIP</span></div>
+        </div>
+        <dialog id="capstoneDialog" aria-labelledby="capstoneDialogTitle"><button type="button" id="closeCapstone" autofocus>Close ×</button><div id="capstoneDialogContent"></div></dialog>
+        
       </div>
     </section>
 
@@ -1224,23 +1240,28 @@
     }
     function renderProjects(){
       const grid=document.getElementById('capstoneGrid');
-      projectMembers.forEach(p=>{
-        const card=element('article','capstone-card');card.id=projectIDs.get(p);
-        const header=element('div','capstone-person');header.append(portrait(p));
-        const names=element('div');names.append(element('p','capstone-author',p.name));
-        if(clean(p.year)||clean(p.position)) names.append(element('p','person-role',clean(p.year)||clean(p.position)));
-        header.append(names);card.append(header);
-        card.append(element('h3','',clean(p.projectTitle)||'Capstone research'));
-        const src=safeURL(p.projectPhoto,true);
-        if(src){const img=element('img','capstone-image');img.src=src;img.alt=clean(p.projectPhotoAlt)||`Project image provided by ${p.name}`;img.loading='lazy';img.addEventListener('error',()=>img.remove());card.append(img);}
-        const description=clean(p.projectDescription);
-        if(description){
-          const details=element('details','project-details');details.append(element('summary','','Read project description'));
-          const full=element('div','project-description');description.split(/\n\s*\n/).forEach(text=>full.append(element('p','',text)));details.append(full);card.append(details);
-        }
-        card.append(contactLinks(p));grid.append(card);
+      const dialog=document.getElementById('capstoneDialog');
+      const entries=projectMembers.length?projectMembers:Array.from({length:6},()=>({}));
+      if(entries.length>6) grid.classList.add('atlas-many');
+      entries.forEach((p,i)=>{
+        const card=element('button','project p'+(i+1));card.type='button';
+        card.id=projectIDs.get(p)||'capstone-placeholder-'+i;
+        const label=element('div');label.append(element('span','dot'),element('span','id','Senior project '+String(i+1).padStart(2,'0')));card.append(label);
+        card.append(element('h3','',clean(p.projectTitle)||'Project details forthcoming'));
+        card.append(element('p','',clean(p.name)||'Research summary and student information to be added.'));
+        card.addEventListener('click',()=>{
+          const content=document.getElementById('capstoneDialogContent');content.replaceChildren();
+          const title=element('h3','',clean(p.projectTitle)||'Project details forthcoming');title.id='capstoneDialogTitle';content.append(title);
+          if(p.name){content.append(portrait(p),element('p','capstone-author',p.name));}
+          const src=safeURL(p.projectPhoto,true);
+          if(src){const img=element('img','capstone-image');img.src=src;img.alt=clean(p.projectPhotoAlt)||'Project image';content.append(img);}
+          content.append(element('p','project-description',clean(p.projectDescription)||'Research summary and student information to be added.'));
+          content.append(contactLinks(p));dialog.showModal();
+        });
+        grid.append(card);
       });
-      document.getElementById('projectEmpty').hidden=projectMembers.length>0;
+      document.getElementById('closeCapstone').addEventListener('click',()=>dialog.close());
+      dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});
     }
     const groupPhoto=document.getElementById('groupPhoto');
     groupPhoto.addEventListener('error',()=>{groupPhoto.hidden=true;document.getElementById('groupPhotoFallback').hidden=false;});
