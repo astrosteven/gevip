@@ -39,22 +39,3 @@ git pull
 
 If you used the ZIP option, download and extract a fresh ZIP to get the latest version.
 
-### Optional: Run a local server
-
-You can also preview the site using Python. From the repository folder, run:
-
-```bash
-python3 -m http.server 8000
-```
-
-On Windows, try this if `python3` is not recognized:
-
-```powershell
-py -m http.server 8000
-```
-
-Keep the terminal open and visit:
-
-http://localhost:8000
-
-If you see a file listing, click the HTML file. Press **Ctrl+C** in the terminal when you are finished to stop the server.
