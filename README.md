@@ -39,3 +39,28 @@ git pull
 
 If you used the ZIP option, download and extract a fresh ZIP to get the latest version.
 
+### If photos don’t appear: run a local preview
+
+If Python is installed, open Terminal or PowerShell and navigate to the website folder:
+
+```bash
+cd "/path/to/gevip-website"
+```
+
+Replace `/path/to/gevip-website` with the location of your downloaded or cloned folder.
+
+**Mac / Linux:**
+
+```bash
+python3 -m http.server 8000 --bind 127.0.0.1
+```
+
+**Windows:**
+
+```powershell
+py -m http.server 8000 --bind 127.0.0.1
+```
+
+Leave the terminal running and open http://localhost:8000 in your browser.
+
+Press **Control+C** in the terminal to stop the preview when finished.
