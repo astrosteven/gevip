@@ -807,6 +807,9 @@
     #capstoneGrid.atlas-many{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;min-height:0}
     #capstoneGrid.atlas-many .project{position:relative;inset:auto;width:auto}
     #capstoneGrid.atlas-many .atlas-center,#capstoneGrid.atlas-many .atlas-ring{display:none}
+      #capstoneGrid .project h3{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+    #capstoneGrid .project .id{font-size:11px;letter-spacing:.06em}
+    @media(min-width:801px){#capstoneGrid{min-height:740px}}
   </style>
 </head>
 
@@ -1017,7 +1020,7 @@
           <p class="section-intro">Meet the students, faculty, and researchers in GEVIP, and learn about their research interests.</p>
         </div>
         <figure class="group-figure">
-          <img id="groupPhoto" src="images/group.jpg" alt="GEVIP group photo Spring 2026" loading="lazy">
+          <img id="groupPhoto" src="images/group.jpg" alt="GEVIP group in spring 2025" loading="lazy">
           <figcaption id="groupCaption">GEVIP · Spring 2025</figcaption>
           <p class="photo-unavailable" id="groupPhotoFallback" hidden>Group photograph currently unavailable.</p>
         </figure>
@@ -1071,9 +1074,9 @@
   <script type="application/json" id="gevip-data">
 {
   "groupPhoto": {
-  "src": "images/group.jpg",
-  "alt": "GEVIP group photo",
-  "caption": "GEVIP · Fall 2026"
+    "src": "images/group.jpg",
+    "alt": "GEVIP group photo",
+    "caption": "GEVIP · Fall 2026"
   },
   "members": [
     {
@@ -1089,14 +1092,15 @@
     },
     {
       "name": "Anthony Taylor",
-      "position": "Postdoctoral Fellow",
-      "interests": "Studies early galaxies and their supermassive black holes, with a focus on broad-line AGN using JWST/NIRSpec.",
+      "position": "Postdoc",
+      "interests": "High-redshift galaxies, high-redshift AGN, and JWST spectroscopy.",
       "email": "anthony.taylor@austin.utexas.edu",
-      "website": "",
-      "photo": "",
+      "website": "https://sites.google.com/view/anthony-taylor-astro",
+      "photo": "images/anthony.png",
       "projectTitle": "",
       "projectDescription": "",
-      "projectPhoto": ""
+      "projectPhoto": "",
+      "year": ""
     },
     {
       "name": "Tiger Hsiao",
@@ -1133,14 +1137,97 @@
     },
     {
       "name": "Ansh Gupta",
-      "position": "Graduate Student",
-      "interests": "Studies black holes in the early universe using James Webb Space Telescope data and their connection to host galaxies.",
+      "position": "PhD Student",
+      "interests": "Active galactic nuclei (AGN) and Little Red Dots (LRDs).",
       "email": "anshrg@utexas.edu",
-      "website": "",
-      "photo": "",
+      "website": "https://anshrg.com",
+      "photo": "images/ansh.jpg",
       "projectTitle": "",
       "projectDescription": "",
-      "projectPhoto": ""
+      "projectPhoto": "",
+      "year": ""
+    },
+    {
+      "name": "Maddie Gerard",
+      "photo": "images/maddie.jpeg",
+      "year": "Senior",
+      "position": "Undergraduate student",
+      "projectTitle": "Dust Through Time: Tracing Attenuation from Reionization to Cosmic Noon",
+      "projectDescription": "My project aims to investigate how the shapes of dust attenuation curves relate to the physical properties of galaxies across cosmic time. I will measure how attenuation curves evolve with redshift in galaxies at z≈2-6, linking these variations to underlying dust and galaxy properties.",
+      "interests": ""
+    },
+    {
+      "name": "Kanyuni Iemoto",
+      "photo": "images/yuni.jpeg",
+      "year": "Junior",
+      "position": "Undergraduate student",
+      "interests": "She is broadly interested in correlations between supermassive black holes and host galaxies, high redshift galaxies and AGN. She is hoping to gain essential skills in observational astronomy through GEVIP."
+    },
+    {
+      "name": "Greta Chubboy",
+      "photo": "images/greta.jpeg",
+      "year": "Junior",
+      "position": "Undergraduate student",
+      "interests": "I am interested in researching galaxy mergers, radio galaxy evolution, and the coevolution of black holes and their host galaxies! GEVIP has taught me so much about astronomy research, and I cannot wait to apply my knowledge to my capstone project this semester."
+    },
+    {
+      "name": "Ananya Gupta",
+      "photo": "images/ananya.jpeg",
+      "year": "Senior",
+      "position": "Undergraduate student",
+      "projectTitle": "Studying Balmer line emission flux ratios in EMBER [working title]",
+      "projectDescription": "This project uses the EMBER G395M dataset to identify broad-line AGN and compare H-alpha/H-beta flux ratios in their broad and narrow emission-line components. Differences between these ratios can help investigate how dust obscuration affects the AGN and its host galaxy.",
+      "interests": ""
+    },
+    {
+      "name": "Daisy Attaway",
+      "photo": "images/daisy.jpg",
+      "year": "Senior",
+      "position": "Undergraduate student",
+      "projectTitle": "Narrow-line AGN Selection in Quiescent Galaxies: Exploring AGN Feedback in the Early Universe",
+      "projectDescription": "Massive quiescent galaxies in the early universe are observed as early as 700 million years after the Big Bang, and the primary proposed mechanism of quenching these galaxies is feedback active galactic nuclei (AGN).",
+      "interests": ""
+    },
+    {
+      "name": "Kyra Sampson",
+      "photo": "images/kyra.JPG",
+      "year": "Senior",
+      "position": "Undergraduate student",
+      "projectTitle": "EMBER: Evaluating Emission-Line Diagnostic Diagrams for High-Redshift Narrow-Line AGN Selection",
+      "projectDescription": "Although the James Webb Space Telescope has enabled the identification of active galactic nuclei (AGN) in surprising numbers, narrow-line (type 2) AGN (NLAGN) are highly underrepresented in the current literature.",
+      "interests": ""
+    },
+    {
+      "name": "Valeria Vasquez",
+      "photo": "images/orion.jpg",
+      "year": "Junior",
+      "position": "Undergraduate student",
+      "interests": "Within GEVIP I’m particularly interested in the role of dust in shaping our observations of galaxies across cosmic time. I’m especially interested in dust attenuation in high-redshift galaxies and Little Red Dots (LRDs) observed with JWST, and how their unusual properties can help us understand star formation, obscured AGN activity, and the evolution of galaxies in the early universe."
+    },
+    {
+      "name": "Cyril John",
+      "photo": "images/cyril.jpg",
+      "year": "Senior",
+      "position": "Undergraduate student",
+      "projectTitle": "Aging Galactic Giants in the COSMOS and CEERS Surveys: The Role of Halo Quenching in the Rapid Evolution of Massive Quiescent Candidates at z>3",
+      "projectDescription": "Massive Quiescent Galaxies (MQGs) at high redshifts have been a center of focus for JWST research because they require unusually rapid evolution to explain their growth and declining star formation before cosmic noon.",
+      "interests": ""
+    },
+    {
+      "name": "Abby Kerrigan",
+      "photo": "images/abby.jpg",
+      "year": "Senior",
+      "position": "Undergraduate student",
+      "projectTitle": "The hunt for transients",
+      "projectDescription": "Supernovae (SNe) are indicators of stellar evolution and star forming activity within galaxies, and the connection between SNe type and a galaxy’s star formation rate (SFR) is essential in understanding how stellar populations evolve.",
+      "interests": ""
+    },
+    {
+      "name": "Michael Roshal",
+      "photo": "images/michael.jpg",
+      "year": "Junior",
+      "position": "Undergraduate student",
+      "interests": "I am interested in working on detecting AGN flares and TDEs in JWST images or exploring the co-evolution of galaxies within a cluster."
     }
   ],
   "spreadsheetRows": []
@@ -1247,7 +1334,7 @@
         const card=element('button','project p'+(i+1));card.type='button';
         card.id=projectIDs.get(p)||'capstone-placeholder-'+i;
         const label=element('div');label.append(element('span','dot'),element('span','id','Senior project '+String(i+1).padStart(2,'0')));card.append(label);
-        card.append(element('h3','',clean(p.projectTitle)||'Project details forthcoming'));
+        const projectHeading=element('h3','',clean(p.projectTitle)||'Project details forthcoming');projectHeading.title=clean(p.projectTitle);card.append(projectHeading);
         card.append(element('p','',clean(p.name)||'Research summary and student information to be added.'));
         card.addEventListener('click',()=>{
           const content=document.getElementById('capstoneDialogContent');content.replaceChildren();
@@ -1276,4 +1363,3 @@
   </script>
 </body>
 </html>
-
