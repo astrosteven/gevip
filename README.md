@@ -1,8 +1,8 @@
-# GEVIP website — testing and feedback
+# GEVIP website 
 
-This is an updated website for Galaxy Evolution VIP at UT Austin. It introduces the program, its people, student capstone projects, and the research timeline.
+This is an updated website for Galaxy Evolution VIP at UT Austin. 
 
-**The website is still a work in progress. Please try it out and share your feedback!** We would especially appreciate comments on readability, navigation, photos, project cards, and how the site works on different screen sizes.
+**The website is still a work in progress. Please try it out and share your feedback!** 
 
 ## Download and open the website
 
