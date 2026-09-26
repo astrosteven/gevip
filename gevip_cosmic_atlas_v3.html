@@ -486,9 +486,9 @@
 
     /* Five chronological milestones; alternate around a segmented arrow. */
     .timeline-journey{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));list-style:none;padding:0;margin:56px 0 0}
-    .journey-node{position:relative;display:grid;grid-template-rows:300px 64px 300px;min-width:0;--accent:#b99aff}
+    .journey-node{position:relative;display:grid;grid-template-rows:340px 64px 340px;min-width:0;--accent:#b99aff}
     .journey-node:nth-child(even){--accent:#e0ccff}
-    .journey-node::before{content:"";position:absolute;left:0;right:0;top:316px;height:32px;background:rgba(196,167,255,.19);clip-path:polygon(0 0,calc(100% - 18px) 0,100% 50%,calc(100% - 18px) 100%,0 100%,18px 50%)}
+    .journey-node::before{content:"";position:absolute;left:0;right:0;top:356px;height:32px;background:rgba(196,167,255,.19);clip-path:polygon(0 0,calc(100% - 18px) 0,100% 50%,calc(100% - 18px) 100%,0 100%,18px 50%)}
     .journey-number{grid-row:2;align-self:center;justify-self:start;margin-left:16px;position:relative;z-index:2;width:64px;height:64px;border:3px solid var(--accent);border-radius:50%;background:#0a0713;color:var(--accent);display:grid;place-items:center;font:700 1rem Inter,system-ui,sans-serif}
     .journey-copy{position:relative;margin:0 18px 0 47px;padding:32px 0 0 16px;border-left:1px solid var(--accent);grid-row:3}
     .journey-node:nth-child(even) .journey-copy{grid-row:1;padding:0 0 32px 16px;display:flex;flex-direction:column;justify-content:flex-end}
@@ -687,6 +687,116 @@
       html{scroll-behavior:auto}
       *,*::before,*::after{animation:none!important;transition:none!important}
     }
+
+    /* Readability: the supplied stylesheet's spacious body sizing, with purple accents. */
+    :root{--bg:#0e1524;--muted:#c3c9d7;--line:rgba(210,199,238,.25)}
+    body{background:#0e1524;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:17px;line-height:1.65}
+    h1,h2,h3{font-family:Georgia,"Times New Roman",serif}
+    h1{font-size:clamp(3.6rem,7vw,6.6rem);line-height:1}
+    h2{line-height:1.1;font-size:clamp(2.4rem,4vw,3.5rem)}
+    .hero-lede,.section-intro,.glass p,.faq-grid details p{font-size:1rem;color:#d1d5e0;line-height:1.8}
+    .section-kicker{font-size:.78rem;color:#c7b1ff;letter-spacing:.12em}
+    .nav{background:rgba(14,21,36,.96)}
+    .nav-links a{font-size:.9rem}
+    .btn{font-size:.94rem}
+    .micro{color:#c0b8d1;font-size:.82rem;line-height:1.6}
+    .nebula,#starfield{display:none}
+    .hero-content{grid-template-columns:1.1fr .9fr;gap:64px;min-height:760px}
+    .hero-cosmos,.hero{min-height:760px}
+    .hero-overview{min-height:0;align-self:center;padding:32px;border:1px solid var(--line);border-radius:22px;background:rgba(14,21,36,.82);backdrop-filter:blur(10px)}
+    .hero-overview-label{font-size:.8rem;color:#c7b1ff;letter-spacing:.08em;text-transform:uppercase}
+    .hero-overview h2{margin:20px 0;font-size:clamp(2.5rem,4vw,3.7rem)}
+    .hero-overview p{font-size:1rem;color:#d1d5e0}
+    .hero-overview>a{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding:14px 0;color:#eee7ff}
+    .hero-overview>a:hover{color:#c7b1ff}
+    .hero-overview .hero-credit{position:static;margin-top:22px;text-align:left;font-size:.6rem;line-height:1.6;color:#b7baca}
+    .hero-scroll{display:none}
+    .glass{background:#162136}
+    .glass>p{max-width:85ch}
+    .program-path{grid-template-columns:repeat(3,1fr);gap:18px}
+    .stage{display:block;padding:20px}
+    .stage-year{font-size:.76rem;margin-bottom:12px;color:#c7b1ff}
+    .stage strong{font-size:1rem}
+    .stage span{font-size:.93rem;line-height:1.65;color:#c3c9d7;margin-top:8px}
+    .journey-copy p{font-family:Inter,system-ui,sans-serif;font-size:.94rem;line-height:1.65;color:#d1d5e0}
+    .journey-term{font-size:.72rem}
+    .journey-number{background:#0e1524}
+    .timeline-note{font-size:.95rem;color:#c3c9d7}
+    .faq-grid details{background:#162136;padding:0 24px}
+    .faq-grid summary{font-size:1.06rem}
+    .faq-grid details:hover,.faq-grid details[open]{background:#1c2940}
+    .group-figure{margin:0 0 40px;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#162136}
+    .group-figure img{display:block;width:100%;height:auto;object-fit:contain}
+    .group-figure figcaption{padding:14px 22px;color:#c3c9d7;font-size:.9rem;border-top:1px solid var(--line)}
+    .photo-unavailable{padding:20px;margin:0;color:#c3c9d7}
+    [hidden]{display:none!important}
+    .people-tools{display:flex;gap:20px;align-items:flex-end}
+    .search-field{flex:1}
+    .filter-field{min-width:240px}
+    .people-tools label{display:block;font-size:.94rem;margin-bottom:8px;font-weight:600}
+    .people-tools input,.people-tools select{width:100%;font:inherit;color:#f7f5ff;background:#162136;border:1px solid #78849d;border-radius:10px;padding:13px 15px;min-height:52px}
+    .people-tools input::placeholder{color:#b9c1d1}
+    .result-count{font-size:.9rem;color:#c3c9d7;margin:18px 0}
+    .people-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+    .person-card{border:1px solid var(--line);border-radius:18px;background:#162136;overflow:hidden;display:flex;flex-direction:column}
+    .person-photo{position:relative;aspect-ratio:4/3;background:linear-gradient(140deg,#26324b,#34294c);display:grid;place-items:center;overflow:hidden;flex-shrink:0}
+    .person-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .person-initials{font-family:Georgia,serif;font-size:3rem;color:#d4c4ef}
+    .person-body{padding:24px;display:flex;flex-direction:column;flex:1}
+    .person-body h3{font-size:1.65rem;line-height:1.2;margin:0 0 8px}
+    .person-role{font-size:.9rem;color:#d2bfff;line-height:1.6;margin:0 0 16px}
+    .person-interest{font-size:1rem;line-height:1.75;color:#d1d5e0;white-space:pre-line;margin:0 0 22px}
+    .person-links{display:flex;flex-wrap:wrap;gap:12px 20px;margin-top:auto;padding-top:16px;border-top:1px solid var(--line)}
+    .person-links:empty{display:none}
+    .person-links a,.capstone-link{font-size:.9rem;color:#d2bfff;text-decoration:underline;text-underline-offset:4px;overflow-wrap:anywhere}
+    .capstone-link{margin:0 0 22px;display:inline-block}
+    .person-links a:hover,.capstone-link:hover{color:white}
+    .capstone-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+    .capstone-card{padding:28px;background:#162136;border:1px solid var(--line);border-radius:18px;scroll-margin-top:130px}
+    .capstone-person{display:flex;align-items:center;gap:16px;margin-bottom:24px}
+    .capstone-person .person-photo{width:64px;height:64px;aspect-ratio:1;border-radius:50%}
+    .capstone-person .person-initials{font-size:1.4rem}
+    .capstone-author{margin:0;font-weight:600}
+    .capstone-person .person-role{margin:4px 0 0}
+    .capstone-card h3{font-size:1.8rem;line-height:1.3;margin:0 0 24px}
+    .capstone-image{width:100%;height:auto;border-radius:8px;margin-bottom:20px}
+    .project-details{margin:0 0 24px;border-top:1px solid var(--line)}
+    .project-details summary{padding:18px 0;cursor:pointer;color:#d2bfff;font-weight:600}
+    .project-description p{font-size:1rem;color:#d1d5e0;line-height:1.8;white-space:pre-line}
+    .empty-state{padding:32px;background:#162136;border:1px solid var(--line);border-radius:16px;color:#d1d5e0;margin:0}
+    .footer-card p{font-size:1rem;color:#d1d5e0}
+    footer{font-size:.85rem;color:#c3c9d7}
+    @media(max-width:1020px){
+      .hero-content{grid-template-columns:1fr;gap:36px;padding-top:140px}
+      .hero-copy{padding-top:0}
+      .hero-overview{position:relative;inset:auto;opacity:1;width:100%;max-width:700px;align-self:auto}
+      .hero-overview h2 br{display:none}
+      .hero-overview h2{font-size:2.5rem}
+      .people-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .program-path{grid-template-columns:1fr}
+    }
+    @media(max-width:700px){
+      .hero,.hero-cosmos{min-height:0}
+      .hero-content{padding-top:160px;gap:30px}
+      .hero-overview{min-height:0;padding:24px}
+      .hero-overview h2{font-size:2rem}
+      .people-tools{flex-direction:column;align-items:stretch}
+      .filter-field{min-width:0}
+      .people-grid,.capstone-grid{grid-template-columns:1fr}
+      .person-photo{aspect-ratio:3/2}
+      .nav-links a{font-size:.78rem}
+      .person-body,.capstone-card{padding:22px}
+    }
+      .people-categories{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0}
+    .people-category{font:inherit;font-size:1rem;padding:12px 20px;border:1px solid #84749f;border-radius:999px;background:#171022;color:#eee8ff;cursor:pointer}
+    .people-category[aria-pressed="true"]{background:#dac8ff;color:#211133;border-color:#dac8ff}
+    .people-category:hover{border-color:#eee8ff}
+    .people-category:focus-visible,.research-node:focus-visible{outline:3px solid #fff;outline-offset:5px}
+    .alumni-label{margin:20px 0 6px;font-size:1rem;color:#e6d8ff}
+    .restored-galaxy{min-height:490px;background:transparent}
+    .restored-galaxy .node-label{font-size:14px;letter-spacing:0;margin-top:10px}
+    .restored-galaxy .research-node{width:100px;height:100px;text-decoration:none}
+    @media(max-width:1020px){.restored-galaxy{position:relative;inset:auto;min-height:380px;opacity:1}.hero-copy{padding-top:20px}}
   </style>
 </head>
 
@@ -734,34 +844,16 @@
               <a class="btn primary" href="#projects">Student research →</a>
               <a class="btn" href="#mission">About the program</a>
             </div>
-            <div class="micro">Select a numbered project to view its details.</div>
+            <div class="micro">Galaxy formation and evolution • Undergraduate research</div>
           </div>
 
-          <div class="galaxy-map" aria-label="Interactive GEVIP research galaxy">
-            <div class="galaxy-core-glow"></div>
-
-            <button class="research-node n1" data-project="0" aria-label="Open research project 1">
-              <span class="node-number">01</span><span class="node-label">RESEARCH</span>
-            </button>
-            <button class="research-node n2" data-project="1" aria-label="Open research project 2">
-              <span class="node-number">02</span><span class="node-label">RESEARCH</span>
-            </button>
-            <button class="research-node n3" data-project="2" aria-label="Open research project 3">
-              <span class="node-number">03</span><span class="node-label">RESEARCH</span>
-            </button>
-            <button class="research-node n4" data-project="3" aria-label="Open research project 4">
-              <span class="node-number">04</span><span class="node-label">RESEARCH</span>
-            </button>
-            <button class="research-node n5" data-project="4" aria-label="Open research project 5">
-              <span class="node-number">05</span><span class="node-label">RESEARCH</span>
-            </button>
-            <button class="research-node n6" data-project="5" aria-label="Open research project 6">
-              <span class="node-number">06</span><span class="node-label">RESEARCH</span>
-            </button>
-
-            <div class="hero-credit">
-              Webb image: NGC 1512 • NASA / ESA / CSA / STScI / PHANGS
-            </div>
+          <div class="galaxy-map restored-galaxy" aria-label="Explore GEVIP">
+            <div class="galaxy-core-glow" aria-hidden="true"></div>
+            <div class="orbit" aria-hidden="true"></div><div class="orbit o2" aria-hidden="true"></div><div class="orbit o3" aria-hidden="true"></div>
+            <a class="research-node n1" href="#projects" aria-label="Explore capstone projects"><span class="node-number">01</span><span class="node-label">Capstones</span></a>
+            <a class="research-node n2" href="#staff" aria-label="Meet the people"><span class="node-number">02</span><span class="node-label">People</span></a>
+            <a class="research-node n4" href="#timeline" aria-label="View program timeline"><span class="node-number">03</span><span class="node-label">Timeline</span></a>
+            <div class="hero-credit">Webb image: NGC 1512 • NASA / ESA / CSA / STScI / PHANGS</div>
           </div>
         </div>
 
@@ -775,62 +867,16 @@
     <section id="projects">
       <div class="container">
         <div class="section-head">
-          <div>
-            <div class="section-kicker">Research</div>
-            <h2>Student projects</h2>
-          </div>
-          <p class="section-intro">
-            Capstone projects developed by GEVIP students. Project summaries and results will be added here as they become available.
-          </p>
+          <div><div class="section-kicker">Student research</div><h2>Capstone projects</h2></div>
+          <p class="section-intro">Research questions, methods, and results from individual student projects.</p>
         </div>
-
-        <div class="atlas">
-          <div class="atlas-ring r1"></div>
-          <div class="atlas-ring r2"></div>
-          <div class="atlas-ring r3"></div>
-          <div class="atlas-center"><span>Galaxy<br>Evolution<br>VIP</span></div>
-
-          <article role="button" tabindex="0" class="project p1" data-project="0">
-            <div><span class="dot"></span><span class="id">Senior project 01</span></div>
-            <h3>Project details forthcoming</h3>
-            <p>Research summary and student information to be added.</p>
-          </article>
-
-          <article role="button" tabindex="0" class="project p2" data-project="1">
-            <div><span class="dot"></span><span class="id">Senior project 02</span></div>
-            <h3>Project details forthcoming</h3>
-            <p>Research summary and student information to be added.</p>
-          </article>
-
-          <article role="button" tabindex="0" class="project p3" data-project="2">
-            <div><span class="dot"></span><span class="id">Senior project 03</span></div>
-            <h3>Project details forthcoming</h3>
-            <p>Research summary and student information to be added.</p>
-          </article>
-
-          <article role="button" tabindex="0" class="project p4" data-project="3">
-            <div><span class="dot"></span><span class="id">Senior project 04</span></div>
-            <h3>Project details forthcoming</h3>
-            <p>Research summary and student information to be added.</p>
-          </article>
-
-          <article role="button" tabindex="0" class="project p5" data-project="4">
-            <div><span class="dot"></span><span class="id">Senior project 05</span></div>
-            <h3>Project details forthcoming</h3>
-            <p>Research summary and student information to be added.</p>
-          </article>
-
-          <article role="button" tabindex="0" class="project p6" data-project="5">
-            <div><span class="dot"></span><span class="id">Senior project 06</span></div>
-            <h3>Project details forthcoming</h3>
-            <p>Research summary and student information to be added.</p>
-          </article>
-        </div>
+        <div class="capstone-grid" id="capstoneGrid"></div>
+        <p class="empty-state" id="projectEmpty">Capstone project descriptions will be added here.</p>
       </div>
     </section>
 
     <section id="mission">
-      <div class="container split">
+      <div class="container">
         <div class="glass">
           <div class="section-kicker">Mission</div>
           <h2 style="margin-top:10px">About the program</h2>
@@ -856,13 +902,6 @@
             </div>
           </div>
         </div>
-
-        <img
-          class="photo"
-          src="https://sites.utexas.edu/vip/wp-content/uploads/sites/5342/2025/02/GeVIP-Group-Photo-Sp2025-1-1024x399.jpg"
-          alt="Spring 2025 GEVIP group"
-          loading="lazy"
-        />
       </div>
     </section>
 
@@ -958,59 +997,27 @@
     <section id="staff">
       <div class="container">
         <div class="section-head">
-          <div>
-            <div class="section-kicker">People</div>
-            <h2>Faculty &amp;<br>research mentors</h2>
-          </div>
-          <p class="section-intro">
-            Meet the faculty, postdoctoral researchers, and graduate students who form the vertically integrated
-            mentoring structure behind GEVIP.
-          </p>
+          <div><div class="section-kicker">Our community</div><h2>People</h2></div>
+          <p class="section-intro">Meet the students, faculty, and researchers in GEVIP, and learn about their research interests.</p>
         </div>
-
-        <div class="staff-grid">
-          <article class="staff-card featured">
-            <div class="staff-role">Professor • GEVIP Program PI</div>
-            <h3>Steven Finkelstein</h3>
-            <p>Broad interests in the formation and evolution of the first stars, galaxies, and supermassive black holes.</p>
-            <a href="mailto:stevenf@astro.as.utexas.edu">stevenf@astro.as.utexas.edu ↗</a>
-          </article>
-
-          <article class="staff-card">
-            <div class="staff-role">Postdoctoral Fellow</div>
-            <h3>Anthony Taylor</h3>
-            <p>Studies early galaxies and their supermassive black holes, with a focus on broad-line AGN using JWST/NIRSpec.</p>
-            <a href="mailto:anthony.taylor@austin.utexas.edu">anthony.taylor@austin.utexas.edu ↗</a>
-          </article>
-
-          <article class="staff-card">
-            <div class="staff-role">Cosmic Frontier Center Fellow • Postdoctoral Fellow</div>
-            <h3>Tiger Hsiao</h3>
-            <p>Investigates the universe’s first light, first stars and galaxies, with particular interest in early chemical abundances.</p>
-            <a href="mailto:tiger.hsiao@utexas.edu">tiger.hsiao@utexas.edu ↗</a>
-          </article>
-
-          <article class="staff-card">
-            <div class="staff-role">Graduate Student</div>
-            <h3>Óscar A. Chávez Ortiz</h3>
-            <p>Studies Lyman-alpha emitting galaxies at z ≈ 2–3.5 and the physical processes controlling the escape of Lyman-alpha photons.</p>
-            <a href="mailto:chavezoscar009@utexas.edu">chavezoscar009@utexas.edu ↗</a>
-          </article>
-
-          <article class="staff-card">
-            <div class="staff-role">Graduate Student</div>
-            <h3>Natalia Villanueva</h3>
-            <p>Studies morphological evolution and spatially resolved galaxy properties using JWST and Euclid imaging.</p>
-            <a href="mailto:nataliavillanueva@utexas.edu">nataliavillanueva@utexas.edu ↗</a>
-          </article>
-
-          <article class="staff-card">
-            <div class="staff-role">Graduate Student</div>
-            <h3>Ansh Gupta</h3>
-            <p>Studies black holes in the early universe using James Webb Space Telescope data and their connection to host galaxies.</p>
-            <a href="mailto:anshrg@utexas.edu">anshrg@utexas.edu ↗</a>
-          </article>
+        <figure class="group-figure">
+          <img id="groupPhoto" src="https://sites.utexas.edu/vip/wp-content/uploads/sites/5342/2025/02/GeVIP-Group-Photo-Sp2025-1-1024x399.jpg" alt="GEVIP group in spring 2025" loading="lazy">
+          <figcaption id="groupCaption">GEVIP · Spring 2025</figcaption>
+          <p class="photo-unavailable" id="groupPhotoFallback" hidden>Group photograph currently unavailable.</p>
+        </figure>
+        <div class="people-categories" role="group" aria-label="People categories">
+          <button type="button" class="people-category" data-group="all" aria-pressed="true" aria-controls="peopleGrid">Everyone</button>
+          <button type="button" class="people-category" data-group="undergraduate" aria-pressed="false" aria-controls="peopleGrid">Undergraduates</button>
+          <button type="button" class="people-category" data-group="graduate" aria-pressed="false" aria-controls="peopleGrid">Graduate students</button>
+          <button type="button" class="people-category" data-group="postdoc" aria-pressed="false" aria-controls="peopleGrid">Postdoctoral researchers</button>
+          <button type="button" class="people-category" data-group="faculty" aria-pressed="false" aria-controls="peopleGrid">Faculty</button>
+          <button type="button" class="people-category" data-group="alumni" aria-pressed="false" aria-controls="peopleGrid">Alumni</button>
+          <button type="button" class="people-category" data-group="other" aria-pressed="false" aria-controls="peopleGrid">Other members</button>
         </div>
+        <p class="result-count" id="peopleCount" role="status" aria-live="polite"></p>
+        <div class="people-grid" id="peopleGrid"></div>
+        <p class="empty-state" id="peopleEmpty" hidden>Profiles for this category will be added soon.</p>
+        <noscript><p>Please enable JavaScript to view the people directory and capstone projects.</p></noscript>
       </div>
     </section>
 
@@ -1042,156 +1049,209 @@
     </div>
   </footer>
 
-  <div class="modal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="modal-card">
-      <button class="close" id="closeModal" aria-label="Close project">×</button>
-      <div class="modal-id" id="modalId">Senior project</div>
-      <h3 id="modalTitle">Project details forthcoming</h3>
-      <p class="summary" id="modalSummary"></p>
-      <div class="meta-grid">
-        <div class="meta"><small>Researcher</small><span id="modalStudent"></span></div>
-        <div class="meta"><small>Data / Method</small><span id="modalData"></span></div>
-        <div class="meta"><small>Research theme</small><span id="modalTheme"></span></div>
-        <div class="meta"><small>Outcome</small><span id="modalOutcome"></span></div>
-      </div>
-      <div class="modal-note">This project entry is awaiting details from the research team.</div>
-    </div>
-  </div>
-
+  <!-- Website content: replace or extend members, or add Google Forms response
+       rows to spreadsheetRows in the exact column order documented below. Photo
+       values must be image URLs/relative paths, not private Drive viewer links. -->
+  <script type="application/json" id="gevip-data">
+{
+  "groupPhoto": {
+    "src": "https://sites.utexas.edu/vip/wp-content/uploads/sites/5342/2025/02/GeVIP-Group-Photo-Sp2025-1-1024x399.jpg",
+    "alt": "GEVIP group in spring 2025",
+    "caption": "GEVIP · Spring 2025"
+  },
+  "members": [
+    {
+      "name": "Steven Finkelstein",
+      "position": "Professor • GEVIP Program PI",
+      "interests": "Broad interests in the formation and evolution of the first stars, galaxies, and supermassive black holes.",
+      "email": "stevenf@astro.as.utexas.edu",
+      "website": "",
+      "photo": "",
+      "projectTitle": "",
+      "projectDescription": "",
+      "projectPhoto": ""
+    },
+    {
+      "name": "Anthony Taylor",
+      "position": "Postdoctoral Fellow",
+      "interests": "Studies early galaxies and their supermassive black holes, with a focus on broad-line AGN using JWST/NIRSpec.",
+      "email": "anthony.taylor@austin.utexas.edu",
+      "website": "",
+      "photo": "",
+      "projectTitle": "",
+      "projectDescription": "",
+      "projectPhoto": ""
+    },
+    {
+      "name": "Tiger Hsiao",
+      "position": "Cosmic Frontier Center Fellow • Postdoctoral Fellow",
+      "interests": "Investigates the universe’s first light, first stars and galaxies, with particular interest in early chemical abundances.",
+      "email": "tiger.hsiao@utexas.edu",
+      "website": "",
+      "photo": "",
+      "projectTitle": "",
+      "projectDescription": "",
+      "projectPhoto": ""
+    },
+    {
+      "name": "Óscar A. Chávez Ortiz",
+      "position": "Graduate Student",
+      "interests": "Studies Lyman-alpha emitting galaxies at z ≈ 2–3.5 and the physical processes controlling the escape of Lyman-alpha photons.",
+      "email": "chavezoscar009@utexas.edu",
+      "website": "",
+      "photo": "",
+      "projectTitle": "",
+      "projectDescription": "",
+      "projectPhoto": ""
+    },
+    {
+      "name": "Natalia Villanueva",
+      "position": "Graduate Student",
+      "interests": "Studies morphological evolution and spatially resolved galaxy properties using JWST and Euclid imaging.",
+      "email": "nataliavillanueva@utexas.edu",
+      "website": "",
+      "photo": "",
+      "projectTitle": "",
+      "projectDescription": "",
+      "projectPhoto": ""
+    },
+    {
+      "name": "Ansh Gupta",
+      "position": "Graduate Student",
+      "interests": "Studies black holes in the early universe using James Webb Space Telescope data and their connection to host galaxies.",
+      "email": "anshrg@utexas.edu",
+      "website": "",
+      "photo": "",
+      "projectTitle": "",
+      "projectDescription": "",
+      "projectPhoto": ""
+    }
+  ],
+  "spreadsheetRows": []
+}
+  </script>
   <script>
-    /*
-      Content note:
-      The FAQ and Staff sections below are based on the current GEVIP site information.
-      Timeline wording follows the program progression described by the source site and its FAQ.
-    */
-    /* =========================================================
-       GEVIP RESEARCH DATA
-       Replace these six entries with the actual senior projects.
-       Add more objects if needed; the modal logic is data-driven.
-       ========================================================= */
-    const projects = Array.from({length: 6}, (_, i) => ({
-      id: `Senior project ${String(i + 1).padStart(2, "0")}`,
-      title: "Project details forthcoming",
-      student: "To be announced",
-      data: "To be announced",
-      theme: "To be announced",
-      outcome: "To be announced",
-      summary: "Research summaries, student information, and results will be added as they become available."
-    }));
-
-    const modal = document.getElementById("projectModal");
-    const closeModal = document.getElementById("closeModal");
-
-    let projectTrigger = null;
-    function openProject(index){
-      projectTrigger = document.activeElement;
-      const p = projects[index];
-      document.getElementById("modalId").textContent = p.id;
-      document.getElementById("modalTitle").textContent = p.title;
-      document.getElementById("modalSummary").textContent = p.summary;
-      document.getElementById("modalStudent").textContent = p.student;
-      document.getElementById("modalData").textContent = p.data;
-      document.getElementById("modalTheme").textContent = p.theme;
-      document.getElementById("modalOutcome").textContent = p.outcome;
-      modal.classList.add("open");
-      closeModal.focus();
-      document.body.style.overflow = "hidden";
+    const siteData = JSON.parse(document.getElementById('gevip-data').textContent);
+    const clean = value => String(value ?? '').trim();
+    // Form response columns, zero-based: timestamp 0, name 1, year 2,
+    // photo 3, interests 4, project title 5, description 6, photo 7,
+    // position 8, topic 9, email 10, website 11, photo 12.
+    // Add response rows (without the header) to spreadsheetRows in gevip-data.
+    // Timestamp is deliberately omitted from public profiles.
+    function fromSpreadsheet(row){
+      const photo = [row[3], row[7], row[12]].map(clean).find(Boolean) || '';
+      return {name:clean(row[1]),year:clean(row[2]),position:clean(row[8]),
+        interests:[clean(row[4]),clean(row[9])].filter((v,i,a)=>v && a.indexOf(v)===i).join('\n\n'),
+        photo, projectTitle:clean(row[5]),projectDescription:clean(row[6]),
+        projectPhoto:'',email:clean(row[10]),website:clean(row[11])};
     }
-
-    function closeProject(){
-      modal.classList.remove("open");
-      document.body.style.overflow = "";
-      projectTrigger?.focus();
+    function safeURL(value, image=false){
+      const raw=clean(value);
+      if(!raw) return '';
+      if(image && /^data:image\/(png|jpeg|webp|gif);base64,[a-z0-9+/=\s]+$/i.test(raw)) return raw;
+      try{
+        const url=new URL(raw,document.baseURI);
+        if(['http:','https:'].includes(url.protocol)) return url.href;
+        if(image && url.protocol==='file:' && !/^[a-z][a-z0-9+.-]*:/i.test(raw)) return url.href;
+      }catch(e){}
+      return '';
     }
-
-    document.querySelectorAll("[data-project]").forEach(el=>{
-      el.addEventListener("click",()=>openProject(Number(el.dataset.project)));
-      if(el.tagName !== "BUTTON") el.addEventListener("keydown", e=>{
-        if(e.key === "Enter" || e.key === " "){e.preventDefault();openProject(Number(el.dataset.project));}
+    function groupOf(person){
+      if(person.alumni === true || /^(alumni|alumnus|alumna)$/i.test(clean(person.category)) || /alumni|alumnus|alumna/i.test(clean(person.position))) return 'alumni';
+      const role=clean(person.position)+' '+clean(person.year);
+      if(/undergrad|sophomore|junior|senior|freshman|first.year|second.year|third.year|fourth.year/i.test(role)) return 'undergraduate';
+      if(/postdoc|post.doc/i.test(role)) return 'postdoc';
+      if(/professor|faculty|principal investigator|\bPI\b/i.test(role)) return 'faculty';
+      if(/graduate|ph\.?d|master/i.test(role)) return 'graduate';
+      return 'other';
+    }
+    // A submitted row updates the existing entry when its email or name matches.
+    const members=siteData.members.map(p=>({...p}));
+    siteData.spreadsheetRows.map(fromSpreadsheet).filter(p=>p.name).forEach(p=>{
+      const i=members.findIndex(m=>(p.email && clean(m.email).toLowerCase()===p.email.toLowerCase()) || clean(m.name).toLowerCase()===p.name.toLowerCase());
+      if(i<0) members.push(p); else members[i]={...members[i],...Object.fromEntries(Object.entries(p).filter(([,v])=>clean(v)))};
+    });
+    function element(tag,className,text){
+      const el=document.createElement(tag);
+      if(className) el.className=className;
+      if(text!==undefined) el.textContent=text;
+      return el;
+    }
+    function portrait(person){
+      const box=element('div','person-photo');
+      const initials=clean(person.name).split(/\s+/).map(n=>n[0]).slice(0,2).join('');
+      const fallback=element('span','person-initials',initials);
+      fallback.setAttribute('aria-hidden','true'); box.append(fallback);
+      const src=safeURL(person.photo,true);
+      if(src){const img=element('img');img.src=src;img.alt=`Image chosen by ${person.name}`;img.loading='lazy';img.addEventListener('error',()=>img.remove());box.append(img);}
+      return box;
+    }
+    function contactLinks(person){
+      const links=element('div','person-links');
+      const email=clean(person.email);
+      if(/^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(email)){
+        const a=element('a','',email);a.href='mailto:'+email;links.append(a);
+      }
+      let website=clean(person.website);
+      if(website && !/^[a-z][a-z0-9+.-]*:/i.test(website) && /^[\w-]+\.[\w.-]+/.test(website)) website='https://'+website;
+      const url=safeURL(website);
+      if(url){const a=element('a','','Personal website ↗');a.href=url;a.target='_blank';a.rel='noopener noreferrer';links.append(a);}
+      return links;
+    }
+    const projectMembers=members.filter(p=>clean(p.projectTitle)||clean(p.projectDescription));
+    const projectIDs=new Map(projectMembers.map((p,i)=>[p,'capstone-'+(i+1)]));
+    let activeGroup='all';
+    // Alumni entries: category:'alumni', name, photo, pastWork, afterGraduation.
+    function renderPeople(){
+      const filtered=members.filter(p=>activeGroup==='all'||groupOf(p)===activeGroup);
+      const grid=document.getElementById('peopleGrid');grid.replaceChildren();
+      filtered.forEach(p=>{
+        const card=element('article','person-card');card.append(portrait(p));
+        const body=element('div','person-body');
+        body.append(element('h3','',p.name));
+        const role=[clean(p.position),clean(p.year)].filter((v,i,a)=>v&&a.indexOf(v)===i).join(' · ');
+        if(role) body.append(element('p','person-role',role));
+        if(groupOf(p)==='alumni'){
+          [['Work at GEVIP',p.pastWork||p.projectDescription||p.interests],['After graduation',p.afterGraduation]].forEach(([label,value])=>{
+            if(clean(value)){body.append(element('h4','alumni-label',label));body.append(element('p','person-interest',value));}
+          });
+        }else if(clean(p.interests)) body.append(element('p','person-interest',p.interests));
+        if(projectIDs.has(p)){const a=element('a','capstone-link','View capstone project →');a.href='#'+projectIDs.get(p);body.append(a);}
+        body.append(contactLinks(p));card.append(body);grid.append(card);
       });
-    });
-
-    closeModal.addEventListener("click", closeProject);
-    modal.addEventListener("click", e=>{ if(e.target === modal) closeProject(); });
-    document.addEventListener("keydown", e=>{ if(e.key === "Escape") closeProject(); });
-
-    modal.addEventListener("keydown", e=>{
-      if(e.key === "Tab"){e.preventDefault();closeModal.focus();}
-    });
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    // ---------- star field ----------
-    const canvas = document.getElementById("starfield");
-    const ctx = canvas.getContext("2d");
-    let stars = [];
-    let width = 0, height = 0, dpr = 1;
-
-    function resizeStarfield(){
-      dpr = Math.min(window.devicePixelRatio || 1, 2);
-      width = window.innerWidth;
-      height = window.innerHeight;
-      canvas.width = width * dpr;
-      canvas.height = height * dpr;
-      canvas.style.width = width + "px";
-      canvas.style.height = height + "px";
-      ctx.setTransform(dpr,0,0,dpr,0,0);
-
-      const count = Math.min(260, Math.max(120, Math.floor((width*height)/8000)));
-      stars = Array.from({length:count},()=>({
-        x:Math.random()*width,
-        y:Math.random()*height,
-        r:Math.random()*1.15 + .18,
-        a:Math.random()*.7 + .2,
-        tw:Math.random()*1.6 + .4,
-        phase:Math.random()*Math.PI*2,
-        speed:(Math.random()-.5)*.018
-      }));
+      document.getElementById('peopleCount').textContent=`${filtered.length} of ${members.length} people`;
+      document.getElementById('peopleEmpty').hidden=filtered.length>0;
     }
-
-    let t = 0;
-    function drawStarfield(){
-      t += .012;
-      ctx.clearRect(0,0,width,height);
-
-      // distant dust
-      for(let i=0;i<stars.length;i++){
-        const s = stars[i];
-        s.phase += s.speed;
-        const alpha = s.a * (.72 + Math.sin(t*s.tw + s.phase)*.28);
-        ctx.beginPath();
-        ctx.fillStyle = `rgba(226,215,255,${Math.max(.04,alpha)})`;
-        ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
-        ctx.fill();
-      }
-
-      // sparse "galaxy" smudges in the background
-      for(let i=0;i<5;i++){
-        const x = (width*(0.13+i*.19) + Math.sin(t*.18+i)*70) % width;
-        const y = height*(0.18 + ((i*0.17)%0.62));
-        const g = ctx.createRadialGradient(x,y,0,x,y,95+i*18);
-        g.addColorStop(0,"rgba(163,117,255,.08)");
-        g.addColorStop(1,"rgba(163,117,255,0)");
-        ctx.fillStyle = g;
-        ctx.fillRect(x-140,y-140,280,280);
-      }
-
-      if(!reducedMotion.matches) requestAnimationFrame(drawStarfield);
+    function renderProjects(){
+      const grid=document.getElementById('capstoneGrid');
+      projectMembers.forEach(p=>{
+        const card=element('article','capstone-card');card.id=projectIDs.get(p);
+        const header=element('div','capstone-person');header.append(portrait(p));
+        const names=element('div');names.append(element('p','capstone-author',p.name));
+        if(clean(p.year)||clean(p.position)) names.append(element('p','person-role',clean(p.year)||clean(p.position)));
+        header.append(names);card.append(header);
+        card.append(element('h3','',clean(p.projectTitle)||'Capstone research'));
+        const src=safeURL(p.projectPhoto,true);
+        if(src){const img=element('img','capstone-image');img.src=src;img.alt=clean(p.projectPhotoAlt)||`Project image provided by ${p.name}`;img.loading='lazy';img.addEventListener('error',()=>img.remove());card.append(img);}
+        const description=clean(p.projectDescription);
+        if(description){
+          const details=element('details','project-details');details.append(element('summary','','Read project description'));
+          const full=element('div','project-description');description.split(/\n\s*\n/).forEach(text=>full.append(element('p','',text)));details.append(full);card.append(details);
+        }
+        card.append(contactLinks(p));grid.append(card);
+      });
+      document.getElementById('projectEmpty').hidden=projectMembers.length>0;
     }
-
-    resizeStarfield();
-    drawStarfield();
-    window.addEventListener("resize", resizeStarfield);
-
-    // Very subtle cursor parallax on the real galaxy image.
-    const heroImage = document.querySelector(".hero-image");
-    window.addEventListener("pointermove", (e)=>{
-      if (!heroImage || window.innerWidth < 760 || reducedMotion.matches) return;
-      const x = (e.clientX/window.innerWidth-.5);
-      const y = (e.clientY/window.innerHeight-.5);
-      heroImage.style.transform = `scale(1.045) translate(${x*-0.8}%, ${y*-0.6}%)`;
-    });
-    window.addEventListener("pointerleave",()=>{
-      if (heroImage) heroImage.style.transform = "scale(1.03)";
-    });
+    const groupPhoto=document.getElementById('groupPhoto');
+    groupPhoto.addEventListener('error',()=>{groupPhoto.hidden=true;document.getElementById('groupPhotoFallback').hidden=false;});
+    groupPhoto.src=safeURL(siteData.groupPhoto.src,true);groupPhoto.alt=siteData.groupPhoto.alt;
+    document.getElementById('groupCaption').textContent=siteData.groupPhoto.caption;
+    document.querySelectorAll('.people-category').forEach(button=>button.addEventListener('click',()=>{
+      activeGroup=button.dataset.group;
+      document.querySelectorAll('.people-category').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
+      renderPeople();
+    }));
+    renderPeople();renderProjects();
   </script>
 </body>
 </html>
