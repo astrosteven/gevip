@@ -8,8 +8,8 @@
 
   <style>
     :root{
-      --bg:#05040b;
-      --bg2:#090719;
+      --bg:#1c1834;
+      --bg2:#100d20;
       --panel:rgba(14,10,31,.72);
       --panel-strong:rgba(20,14,43,.92);
       --purple:#8b5cf6;
@@ -810,6 +810,34 @@
       #capstoneGrid .project h3{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
     #capstoneGrid .project .id{font-size:11px;letter-spacing:.06em}
     @media(min-width:801px){#capstoneGrid{min-height:740px}}
+  
+    /* Readability and layout revisions */
+    body{background-color:#171b30}
+    .hero-image{background-image:linear-gradient(90deg,rgba(6,8,19,.62),rgba(6,8,19,.12) 60%,rgba(6,8,19,.08)),url("https://assets.science.nasa.gov/dynamicimage/assets/science/missions/webb/science/2024/01/STScI-01HM9Z5J33EJWZ00GHCG7T3VE4.png?crop=faces%2Cfocalpoint&fit=clip&h=2088&w=3445");filter:saturate(1.05) brightness(1.12)}
+    .hero-vignette{background:linear-gradient(180deg,rgba(6,8,19,.12),transparent 60%,rgba(23,27,48,.65))}
+    .hero-content{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px}
+    .hero-copy{min-width:0}
+    .restored-galaxy{min-width:0}
+    .restored-galaxy .n1{left:12%;top:20%;bottom:auto}
+    .restored-galaxy .n2{left:auto;right:8%;top:12%;bottom:auto}
+    .restored-galaxy .n4{left:auto;top:auto;right:3%;bottom:12%}
+    .faq-grid{grid-template-columns:1fr;align-items:start}
+    .capstone-link{background:none;border:0;padding:0;text-align:left;font-family:inherit;line-height:1.6;cursor:pointer}
+    #capstoneGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:auto 180px auto;gap:24px;min-height:850px;padding:32px;align-items:start;background-color:#201a35}
+    #capstoneGrid .project{position:relative;inset:auto;width:100%;padding:20px;background:rgba(23,17,41,.96);height:auto}
+    #capstoneGrid .p1{grid-column:1;grid-row:1}#capstoneGrid .p5{grid-column:2;grid-row:1}#capstoneGrid .p2{grid-column:3;grid-row:1}
+    #capstoneGrid .p4{grid-column:1;grid-row:3}#capstoneGrid .p6{grid-column:2;grid-row:3}#capstoneGrid .p3{grid-column:3;grid-row:3}
+    #capstoneGrid .project h3{display:block;-webkit-line-clamp:unset;overflow:visible;font-size:1.05rem;line-height:1.4;overflow-wrap:anywhere}
+    #capstoneGrid .project p{font-size:1rem;line-height:1.5}
+    #capstoneGrid .project .id{font-size:.875rem;letter-spacing:.04em}
+    #capstoneDialog .project-description{max-height:none;overflow:visible;display:block;-webkit-line-clamp:unset;white-space:pre-wrap}
+    .webb-feature{margin:36px 0 0;border:1px solid var(--line);border-radius:24px;overflow:hidden;background:#201a35}
+    .webb-feature img{display:block;width:100%;max-height:680px;object-fit:contain;background:#080a13}
+    .webb-feature figcaption{padding:20px;display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;color:#ded6ee;font-size:.95rem}
+    .webb-feature figcaption a{color:#dac8ff;text-decoration:underline}
+    @media(max-width:1020px){.hero-content{grid-template-columns:1fr}.restored-galaxy{min-height:350px}}
+    @media(max-width:800px){#capstoneGrid{grid-template-columns:1fr;grid-template-rows:none;min-height:0;padding:18px}#capstoneGrid .project{grid-column:auto;grid-row:auto}.webb-feature figcaption{display:grid}}
+
   </style>
 </head>
 
@@ -889,6 +917,10 @@
           <div class="atlas-ring r3" aria-hidden="true"></div>
           <div class="atlas-center"><span>Galaxy<br>Evolution<br>VIP</span></div>
         </div>
+        <figure class="webb-feature">
+          <img id="webbDeepField" src="images/webb-smacs0723.png" alt="Webb NIRCam view of galaxy cluster SMACS 0723, with distant galaxies distorted into arcs by gravitational lensing" loading="lazy">
+          <figcaption><strong>Webb’s First Deep Field · SMACS 0723</strong><span>NIRCam image · NASA, ESA, CSA, STScI</span><a href="https://science.nasa.gov/asset/webb/webbs-first-deep-field-nircam-image/" target="_blank" rel="noopener noreferrer">Image details and downloads ↗</a></figcaption>
+        </figure>
         <dialog id="capstoneDialog" aria-labelledby="capstoneDialogTitle"><button type="button" id="closeCapstone" autofocus>Close ×</button><div id="capstoneDialogContent"></div></dialog>
         
       </div>
@@ -956,10 +988,10 @@
           </li>
           <li class="journey-node">
             <div class="journey-number" aria-hidden="true">05</div>
-            <div class="journey-copy"><div class="journey-term">Senior spring</div><h3>Final presentation</h3><p>Complete the capstone project and a final URF poster. Projects may also lead to a Research Note or published paper.</p></div>
+            <div class="journey-copy"><div class="journey-term">Senior spring</div><h3>Final presentation</h3><p>Complete the capstone project or final URF poster. Projects will result in an honors thesis, research note, or published paper.</p></div>
           </li>
         </ol>
-        <p class="timeline-note">Students typically apply in the fall before joining. See the <a href="#faq">FAQ</a> for eligibility and program details.</p>
+        <p class="timeline-note">Eligible students can enroll directly in AST211G in the spring semester; no application is required. See the <a href="#faq">FAQ</a> for eligibility and program details.</p>
       </div>
     </section>
 
@@ -979,11 +1011,11 @@
         <div class="faq-grid">
           <details open>
             <summary>How is GEVIP structured?</summary>
-            <p>Members typically apply in the fall and join during sophomore spring. Sophomores work through training modules and a group starter project; during junior fall they read papers and develop an individual Capstone Project proposal; students then work on the Capstone until graduation.</p>
+            <p>Students who meet the prerequisites enroll in AST211G in the spring semester; no application is required. Sophomores work through training modules and a group starter project; during junior fall they read papers and develop an individual Capstone Project proposal; students then work on the Capstone until graduation.</p>
           </details>
           <details>
-            <summary>Who is eligible to apply?</summary>
-            <p>Current sophomores with physics- and/or astronomy-related majors are typical applicants. Juniors with research experience may also be considered, particularly transfer students.</p>
+            <summary>Who can enroll in AST211G?</summary>
+            <p>Prerequisites: sophomore standing; Astronomy 307 with a grade of at least B+; and Astronomy 376R, 275, or 375 with a grade of at least B+. Eligible students can enroll in AST211G in the spring semester.</p>
           </details>
           <details>
             <summary>Do I need coding experience?</summary>
@@ -1308,11 +1340,23 @@
             if(clean(value)){body.append(element('h4','alumni-label',label));body.append(element('p','person-interest',value));}
           });
         }else if(clean(p.interests)) body.append(element('p','person-interest',p.interests));
-        if(projectIDs.has(p)){const a=element('a','capstone-link','View capstone project →');a.href='#'+projectIDs.get(p);body.append(a);}
+        if(projectIDs.has(p)){const a=element('button','capstone-link',clean(p.projectTitle)||'Capstone project');a.type='button';a.setAttribute('aria-haspopup','dialog');a.addEventListener('click',()=>openCapstone(p));body.append(a);}
         body.append(contactLinks(p));card.append(body);grid.append(card);
       });
       document.getElementById('peopleCount').textContent=`${filtered.length} of ${members.length} people`;
       document.getElementById('peopleEmpty').hidden=filtered.length>0;
+    }
+    function openCapstone(p){
+      const dialog=document.getElementById('capstoneDialog');
+
+          const content=document.getElementById('capstoneDialogContent');content.replaceChildren();
+          const title=element('h3','',clean(p.projectTitle)||'Project details forthcoming');title.id='capstoneDialogTitle';content.append(title);
+          if(p.name){content.append(portrait(p),element('p','capstone-author',p.name));}
+          const src=safeURL(p.projectPhoto,true);
+          if(src){const img=element('img','capstone-image');img.src=src;img.alt=clean(p.projectPhotoAlt)||'Project image';content.append(img);}
+          content.append(element('p','project-description',clean(p.projectDescription)||'Research summary and student information to be added.'));
+          content.append(contactLinks(p));dialog.showModal();
+
     }
     function renderProjects(){
       const grid=document.getElementById('capstoneGrid');
@@ -1325,15 +1369,7 @@
         const label=element('div');label.append(element('span','dot'),element('span','id','Senior project '+String(i+1).padStart(2,'0')));card.append(label);
         const projectHeading=element('h3','',clean(p.projectTitle)||'Project details forthcoming');projectHeading.title=clean(p.projectTitle);card.append(projectHeading);
         card.append(element('p','',clean(p.name)||'Research summary and student information to be added.'));
-        card.addEventListener('click',()=>{
-          const content=document.getElementById('capstoneDialogContent');content.replaceChildren();
-          const title=element('h3','',clean(p.projectTitle)||'Project details forthcoming');title.id='capstoneDialogTitle';content.append(title);
-          if(p.name){content.append(portrait(p),element('p','capstone-author',p.name));}
-          const src=safeURL(p.projectPhoto,true);
-          if(src){const img=element('img','capstone-image');img.src=src;img.alt=clean(p.projectPhotoAlt)||'Project image';content.append(img);}
-          content.append(element('p','project-description',clean(p.projectDescription)||'Research summary and student information to be added.'));
-          content.append(contactLinks(p));dialog.showModal();
-        });
+        card.addEventListener('click',()=>openCapstone(p));
         grid.append(card);
       });
       document.getElementById('closeCapstone').addEventListener('click',()=>dialog.close());
@@ -1348,6 +1384,8 @@
       document.querySelectorAll('.people-category').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
       renderPeople();
     }));
+    const deepField=document.getElementById('webbDeepField');
+    deepField.addEventListener('error',()=>{deepField.src="https://assets.science.nasa.gov/dynamicimage/assets/science/missions/webb/science/2022/07/STScI-01G8H1K2BCNATEZSKVRN9Z69SR.png?crop=faces%2Cfocalpoint&fit=clip&h=1600&w=1568";},{once:true});
     renderPeople();renderProjects();
   </script>
 </body>
