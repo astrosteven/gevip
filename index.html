@@ -825,8 +825,6 @@
     .capstone-link{background:none;border:0;padding:0;text-align:left;font-family:inherit;line-height:1.6;cursor:pointer}
     #capstoneGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:auto 180px auto;gap:24px;min-height:850px;padding:32px;align-items:start;background-color:#201a35}
     #capstoneGrid .project{position:relative;inset:auto;width:100%;padding:20px;background:rgba(23,17,41,.96);height:auto}
-    #capstoneGrid .p1{grid-column:1;grid-row:1}#capstoneGrid .p5{grid-column:2;grid-row:1}#capstoneGrid .p2{grid-column:3;grid-row:1}
-    #capstoneGrid .p4{grid-column:1;grid-row:3}#capstoneGrid .p6{grid-column:2;grid-row:3}#capstoneGrid .p3{grid-column:3;grid-row:3}
     #capstoneGrid .project h3{display:block;-webkit-line-clamp:unset;overflow:visible;font-size:1.05rem;line-height:1.4;overflow-wrap:anywhere}
     #capstoneGrid .project p{font-size:1rem;line-height:1.5}
     #capstoneGrid .project .id{font-size:.875rem;letter-spacing:.04em}
@@ -853,14 +851,9 @@
     @media(max-width:600px){.hero-copy{padding:20px}#capstoneDialog{padding:18px}#capstoneDialog .capstone-image{width:120px;height:100px}}
       @media(max-width:700px){.group-figure{width:100%}}
   
-    #capstoneGrid{isolation:isolate;padding-bottom:100px;background:#17192b}
-    .atlas-background{position:absolute;inset:0;z-index:-2;pointer-events:none}
-    .atlas-background img{width:100%;height:100%;object-fit:cover;opacity:.65}
+    #capstoneGrid{isolation:isolate;background:#17192b}
     #capstoneGrid::before{z-index:-1;background:linear-gradient(rgba(16,12,31,.18),rgba(16,12,31,.12) 70%,rgba(16,12,31,.85));mask-image:none}
-    .atlas-image-credit{position:absolute;bottom:18px;left:24px;right:24px;z-index:5;display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.875rem;color:#fff;text-shadow:0 1px 4px #000}
-    .atlas-image-credit a{color:#ede2ff;text-decoration:underline}
-    @media(max-width:800px){#capstoneGrid{padding-bottom:140px}.atlas-image-credit{left:18px;right:18px;font-size:.8rem}}
-  
+
     /* Plain section navigation replaces decorative home-page spheres. */
     .hero-destinations{align-self:end;justify-self:end;width:min(100%,350px);padding-bottom:36px;min-width:0}
     .quick-links{padding:22px 24px;background:rgba(16,21,35,.94);border:1px solid #8190a5;border-radius:12px}
@@ -902,23 +895,17 @@
     .quick-links a span:last-child{flex-shrink:0}
     @media(max-width:1050px){.hero-content{grid-template-columns:minmax(0,1fr);gap:28px;padding-top:150px}.hero-copy{max-width:720px}.hero-copy h1{font-size:clamp(3rem,8vw,5rem)}.hero-destinations{max-width:720px;justify-self:start}}
     @media(max-width:700px){.hero-content{padding-top:175px}.hero-copy{padding:24px}.hero-copy h1{font-size:clamp(2.5rem,11vw,4rem)}.quick-links{padding:18px}}
-    @media (min-width: 801px) {
-      #capstoneGrid {
-        grid-template-rows: auto 240px auto;
-      }
-
-      #capstoneGrid .atlas-center {
-        position: relative;
-        grid-column: 2;
-        grid-row: 2;
-        place-self: center;
-        left: auto;
-        top: auto;
-        transform: none;
-        width: 170px;
-        height: 170px;
-      }
-    }
+    .publication-list{margin:8px 0 20px;padding-left:20px;line-height:1.7}
+    .publication-list a{color:#dac8ff;text-decoration:underline;overflow-wrap:anywhere}
+    .publication-list a:hover,.publication-list a:focus-visible{color:#fff}
+    /* Simple responsive capstone cards. */
+    #capstoneGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:none;grid-auto-rows:auto;gap:24px;min-height:0;padding:0;background:none;align-items:stretch}
+    #capstoneGrid::before{display:none}
+    #capstoneGrid .project{grid-column:auto;grid-row:auto;display:flex;flex-direction:column;height:100%;border-radius:12px;background:#162136}
+    #capstoneGrid .project-details-action{align-self:flex-start;margin-top:auto}
+    #capstoneGrid .project p{margin-bottom:20px}
+    @media(max-width:1020px){#capstoneGrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:640px){#capstoneGrid{grid-template-columns:1fr}}
   </style>
 </head>
 
@@ -1018,13 +1005,7 @@
           <div><div class="section-kicker">Student research</div><h2>Capstone projects</h2></div>
           <p class="section-intro">Research questions, methods, and results from individual student projects.</p>
         </div>
-        <div class="atlas" id="capstoneGrid" aria-label="Capstone projects">
-          <div class="atlas-background" aria-hidden="true"><img id="webbDeepField" src="images/webb-smacs0723.png" alt="Webb NIRCam view of galaxy cluster SMACS 0723, with distant galaxies distorted into arcs by gravitational lensing" loading="lazy"></div>
-          <div class="atlas-image-credit"><strong>Webb’s First Deep Field · SMACS 0723</strong><span>NIRCam image · NASA, ESA, CSA, STScI</span><a href="https://science.nasa.gov/asset/webb/webbs-first-deep-field-nircam-image/" target="_blank" rel="noopener noreferrer">Image details and downloads ↗</a></div>
-          <div class="atlas-ring r1" aria-hidden="true"></div>
-          <div class="atlas-ring r2" aria-hidden="true"></div>
-          <div class="atlas-ring r3" aria-hidden="true"></div>
-          <div class="atlas-center"><span>Galaxy<br>Evolution<br>VIP</span></div>
+        <div class="capstone-project-grid" id="capstoneGrid" aria-label="Capstone projects">
         </div>
 
         <dialog id="capstoneDialog" aria-labelledby="capstoneDialogTitle"><button type="button" id="closeCapstone" autofocus>Close ×</button><div id="capstoneDialogContent"></div></dialog>
@@ -1138,9 +1119,7 @@
           <button type="button" class="people-category" data-group="graduate" aria-pressed="false" aria-controls="peopleGrid">Graduate students</button>
           <button type="button" class="people-category" data-group="postdoc" aria-pressed="false" aria-controls="peopleGrid">Postdoctoral researchers</button>
           <button type="button" class="people-category" data-group="faculty" aria-pressed="false" aria-controls="peopleGrid">Faculty</button>
-          <!-- Alumni category temporarily hidden.
-<button type="button" class="people-category" data-group="alumni" aria-pressed="false" aria-controls="peopleGrid">Alumni</button>
-          -->
+          <button type="button" class="people-category" data-group="alumni" aria-pressed="false" aria-controls="peopleGrid">Alumni</button>
           <button type="button" class="people-category" data-group="other" aria-pressed="false" aria-controls="peopleGrid">Other members</button>
         </div>
         <p class="result-count" id="peopleCount" role="status" aria-live="polite"></p>
@@ -1339,6 +1318,288 @@
       "year": "Junior",
       "position": "Undergraduate student",
       "interests": "I am interested in working on detecting AGN flares and TDEs in JWST images or exploring the co-evolution of galaxies within a cluster."
+    },
+    {
+      "name": "Adin Viera",
+      "category": "alumni",
+      "position": "Alumni",
+      "year": "2024–2026",
+      "pastWork": "Tracing the Onset of Chemical Order: Metallicity Structure in Galaxies at 6<z<8",
+      "photo": "",
+      "publications": []
+    },
+    {
+      "name": "Gabi Oliva",
+      "category": "alumni",
+      "position": "Alumni",
+      "year": "2025–2026",
+      "pastWork": "Selecting H-alpha Emitters at z > 6 with Narrowband Imaging in CEERS",
+      "photo": "",
+      "publications": []
+    },
+    {
+      "name": "Avery Abramson",
+      "category": "alumni",
+      "position": "Alumni",
+      "year": "2023–2026",
+      "pastWork": "Analyzing the SFHs of Simulated Galaxies with BAGPIPES",
+      "photo": "",
+      "publications": []
+    },
+    {
+      "name": "Hannah Lawson",
+      "category": "alumni",
+      "position": "Alumni",
+      "year": "2023–2026",
+      "pastWork": "Little Red Dots, Big Implications: Constraining Number Densities at z < 4 with Euclid",
+      "photo": "",
+      "publications": []
+    },
+    {
+      "name": "Lauren Kokinakis",
+      "category": "alumni",
+      "position": "Alumni",
+      "year": "2023–2026",
+      "pastWork": "Analyzing the Effect of Merger Events on Galaxy Evolution with CAPERS and UNICORN for 3 < z < 7",
+      "photo": "",
+      "publications": []
+    },
+    {
+      "name": "Virginia Vanicek",
+      "category": "alumni",
+      "position": "Alumni",
+      "year": "2023–2026",
+      "pastWork": "Star Formation and Nebular Attenuation from PaAlpha, BrAlpha, and BrBeta in Massive Dust-obscured Galaxies at Cosmic Noon using JWST",
+      "photo": "",
+      "publications": []
+    },
+    {
+      "name": "Rahul Shaji",
+      "category": "alumni",
+      "position": "Alumni",
+      "year": "2023–2025",
+      "pastWork": "Star Formation Rate Density at 2 < z < 7: The Redshift Evolution of Early Galaxies with Hydrogen-Alpha Line Luminosity Functions",
+      "photo": "",
+      "publications": []
+    },
+    {
+      "name": "Urvi Thakurdesai",
+      "category": "alumni",
+      "position": "Alumni",
+      "year": "2022–2025",
+      "pastWork": "Hunting Wandering 3<z<8 Black Holes via Spatial Offsets in Ionization Ratio and Continuum Emission",
+      "photo": "",
+      "publications": [
+        {
+          "title": "Publication on NASA ADS",
+          "url": "https://ui.adsabs.harvard.edu/abs/2026ApJ..1006..246T/abstract"
+        }
+      ]
+    },
+    {
+      "name": "Marissa Perry",
+      "category": "alumni",
+      "position": "Alumni",
+      "year": "2022–2025",
+      "pastWork": "he Prevalence of Bursty Star Formation in Low-Mass Galaxies at z=1-7 from H-alpha-to-UV Diagnostics",
+      "photo": "",
+      "publications": [
+        {
+          "title": "Publication on NASA ADS",
+          "url": "https://ui.adsabs.harvard.edu/abs/2025ApJ...994...14P/abstract"
+        }
+      ]
+    },
+    {
+      "name": "Lipika Chatur",
+      "category": "alumni",
+      "position": "Alumni",
+      "year": "2022–2025",
+      "pastWork": "Probing Direct-Te Metallicities of 1 < z < 9 Stacked Galaxies with CEERS and RUBIES",
+      "photo": "",
+      "publications": []
+    },
+    {
+      "name": "Arnav Shah",
+      "category": "alumni",
+      "position": "Alumni",
+      "year": "2022–2025",
+      "pastWork": "Insights into Galaxy Morphology from Gas Kinematics at 1.5 <z<7.5",
+      "photo": "",
+      "publications": []
+    },
+    {
+      "name": "Evelyn Allsup",
+      "category": "alumni",
+      "position": "Alumni",
+      "year": "2021–2024",
+      "pastWork": "SFRs of High(ish) Redshift Galaxies at 0 < z < 3.5 using Paschen-alpha",
+      "photo": "",
+      "publications": []
+    },
+    {
+      "name": "Sarah Darber",
+      "category": "alumni",
+      "position": "Alumni",
+      "year": "2021–2024",
+      "pastWork": "Measuring the Masses of High Redshift SMBHs",
+      "photo": "",
+      "publications": []
+    },
+    {
+      "name": "Galina Bouyer",
+      "category": "alumni",
+      "position": "Alumni",
+      "year": "2021–2024",
+      "pastWork": "Studying Ultra-Blue UV Spectral Slope values for JWST galaxies at z=6-8",
+      "photo": "",
+      "publications": []
+    },
+    {
+      "name": "Isaiah Pipkin",
+      "category": "alumni",
+      "position": "Alumni",
+      "year": "2021–2024",
+      "pastWork": "Advancing Astronomical Understanding: Statistical Analysis of Nearby Galaxies' Star-Forming Regions with HST and JWST",
+      "photo": "",
+      "publications": []
+    },
+    {
+      "name": "Emma Tyler",
+      "category": "alumni",
+      "position": "Alumni",
+      "year": "2021–2026",
+      "pastWork": "Selecting Broad-Line AGN at Low-Redshift with JWST",
+      "photo": "",
+      "publications": []
+    },
+    {
+      "name": "Samantha Goldberg",
+      "category": "alumni",
+      "position": "Alumni",
+      "year": "2020–2024",
+      "pastWork": "Measuring Spatial Profiles in Low-Z [OII] Emitting Galaxies from the SHELA field",
+      "photo": "",
+      "publications": []
+    },
+    {
+      "name": "Valentina Tardugno Poleo",
+      "category": "alumni",
+      "position": "Alumni",
+      "year": "2020–2022",
+      "pastWork": "Identifying Active Galactic Nuclei at z 3 from the HETDEX Survey Using Machine Learning",
+      "photo": "",
+      "publications": [
+        {
+          "title": "Publication on NASA ADS",
+          "url": "https://ui.adsabs.harvard.edu/abs/2023AJ....165..153T/abstract"
+        }
+      ]
+    },
+    {
+      "name": "Nick Davila",
+      "category": "alumni",
+      "position": "Alumni",
+      "year": "2020–2024",
+      "pastWork": "Using Machine Learning to Identify Signal from Noise in HETDEX Data",
+      "photo": "",
+      "publications": []
+    },
+    {
+      "name": "Sarah Bruce",
+      "category": "alumni",
+      "position": "Alumni",
+      "year": "2020–2022",
+      "pastWork": "Quantifying the Inaccuracy of High-Redshift Galaxy Classification in the Extended Groth Strip Field",
+      "photo": "",
+      "publications": []
+    },
+    {
+      "name": "Abriana Himantog",
+      "category": "alumni",
+      "position": "Alumni",
+      "year": "2020–2023",
+      "pastWork": "Measuring the Ultraviolet Spectral Slope of Lyman-Alpha Emitting Galaxies in the SHELA field",
+      "photo": "",
+      "publications": []
+    },
+    {
+      "name": "Thomas Maina",
+      "category": "alumni",
+      "position": "Alumni",
+      "year": "2020–2023",
+      "pastWork": "Using Emission Line Ratios to Understand Gas Ionization Processes",
+      "photo": "",
+      "publications": []
+    },
+    {
+      "name": "Aubrey Medrano",
+      "category": "alumni",
+      "position": "Alumni",
+      "year": "2020–2022",
+      "pastWork": "Recovery of the z>3 Galaxy Size-Mass Relationship from JWST Simulations",
+      "photo": "",
+      "publications": []
+    },
+    {
+      "name": "Kaile Wang",
+      "category": "alumni",
+      "position": "Alumni",
+      "year": "2020–2022",
+      "pastWork": "Selecting z ~ 8 Galaxies with JWST Photometry in CEERS",
+      "photo": "",
+      "publications": [
+        {
+          "title": "Publication on NASA ADS",
+          "url": "https://ui.adsabs.harvard.edu/abs/2023RNAAS...7..109W/abstract"
+        }
+      ]
+    },
+    {
+      "name": "Daniel Mock",
+      "category": "alumni",
+      "position": "Alumni",
+      "year": "2019–2022",
+      "pastWork": "SHELA Field AGN Ultraviolet Luminosity Function at z~3",
+      "photo": "",
+      "publications": []
+    },
+    {
+      "name": "Delaney White",
+      "category": "alumni",
+      "position": "Alumni",
+      "year": "2019–2022",
+      "pastWork": "Identifying Protoclusters in the COSMOS and SHELA Fields",
+      "photo": "",
+      "publications": []
+    },
+    {
+      "name": "Isaac Laseter",
+      "category": "alumni",
+      "position": "Alumni",
+      "year": "2018–2021",
+      "pastWork": "A Search for Lensed Lyα Emitters within the Early HETDEX Data Set",
+      "photo": "",
+      "publications": [
+        {
+          "title": "Publication on NASA ADS",
+          "url": "https://ui.adsabs.harvard.edu/abs/2022ApJ...940....9L/abstract"
+        }
+      ]
+    },
+    {
+      "name": "Sofia Rojas Ruiz",
+      "category": "alumni",
+      "position": "Alumni",
+      "year": "2015–2019",
+      "pastWork": "Probing the Bright End of the Rest-frame Ultraviolet Luminosity Function at z = 8-10 with Hubble Pure-parallel Imaging",
+      "photo": "",
+      "publications": [
+        {
+          "title": "Publication on NASA ADS",
+          "url": "https://ui.adsabs.harvard.edu/abs/2020ApJ...891..146R/abstract"
+        }
+      ]
     }
   ],
   "spreadsheetRows": []
@@ -1400,6 +1661,11 @@
       if(src){const img=element('img');img.src=src;img.alt=`Image chosen by ${person.name}`;img.loading='lazy';img.addEventListener('error',()=>img.remove());box.append(img);}
       return box;
     }
+    function publicationLinks(person){
+      const list=element('ul','publication-list');
+      (person.publications||[]).forEach(pub=>{const url=safeURL(pub.url);if(!url)return;const item=element('li');const a=element('a','',pub.title||'View publication');a.href=url;a.target='_blank';a.rel='noopener noreferrer';item.append(a);list.append(item);});
+      return list;
+    }
     function contactLinks(person){
       const links=element('div','person-links');
       const email=clean(person.email);
@@ -1417,10 +1683,11 @@
     let activeGroup='all';
     // Alumni entries: category:'alumni', name, photo, pastWork, afterGraduation.
     function renderPeople(){
-      const filtered=members.filter(p=>groupOf(p)!=='alumni' && (activeGroup==='all'||groupOf(p)===activeGroup));
+      const filtered=members.filter(p=>activeGroup==='all'||groupOf(p)===activeGroup);
       const grid=document.getElementById('peopleGrid');grid.replaceChildren();
       filtered.forEach(p=>{
-        const card=element('article','person-card');card.append(portrait(p));
+        const card=element('article','person-card');
+        if(groupOf(p)!=='alumni' || clean(p.photo)) card.append(portrait(p));
         const body=element('div','person-body');
         body.append(element('h3','',p.name));
         const role=[clean(p.position),clean(p.year)].filter((v,i,a)=>v&&a.indexOf(v)===i).join(' · ');
@@ -1431,6 +1698,7 @@
           });
         }else if(clean(p.interests)) body.append(element('p','person-interest',p.interests));
         if(projectIDs.has(p)){const a=element('button','capstone-link',clean(p.projectTitle)||'Capstone project');a.type='button';a.setAttribute('aria-haspopup','dialog');a.addEventListener('click',()=>openCapstone(p));body.append(a);}
+        if((p.publications||[]).length){body.append(element('h4','alumni-label','Publications'),publicationLinks(p));}
         body.append(contactLinks(p));card.append(body);grid.append(card);
       });
       document.getElementById('peopleCount').textContent=`${filtered.length} of ${members.length} people`;
@@ -1457,11 +1725,9 @@
       const grid=document.getElementById('capstoneGrid');
       const dialog=document.getElementById('capstoneDialog');
       const entries=projectMembers.length?projectMembers:Array.from({length:6},()=>({}));
-      if(entries.length>6) grid.classList.add('atlas-many');
       entries.forEach((p,i)=>{
-        const card=element('button','project p'+(i+1));card.type='button';
+        const card=element('button','project');card.type='button';
         card.id=projectIDs.get(p)||'capstone-placeholder-'+i;
-        const label=element('div');label.append(element('span','dot'),element('span','id','Senior project '+String(i+1).padStart(2,'0')));card.append(label);
         const projectHeading=element('h3','',clean(p.projectTitle)||'Project details forthcoming');projectHeading.title=clean(p.projectTitle);card.append(projectHeading);
         card.append(element('p','',clean(p.name)||'Research summary and student information to be added.'));
         card.append(element('span','project-details-action','View details →'));
@@ -1481,8 +1747,6 @@
       document.querySelectorAll('.people-category').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
       renderPeople();
     }));
-    const deepField=document.getElementById('webbDeepField');
-    deepField.addEventListener('error',()=>{deepField.src="https://assets.science.nasa.gov/dynamicimage/assets/science/missions/webb/science/2022/07/STScI-01G8H1K2BCNATEZSKVRN9Z69SR.png?crop=faces%2Cfocalpoint&fit=clip&h=1600&w=1568";},{once:true});
     renderPeople();renderProjects();
   </script>
 </body>
