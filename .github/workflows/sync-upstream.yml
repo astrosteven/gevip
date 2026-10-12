@@ -1,0 +1,19 @@
+name: Sync fork with upstream
+# Keeps astrosteven/gevip up to date with yuni1218/gevip-website.
+# Runs daily (and on-demand); fast-forwards main from upstream. Pages redeploys on change.
+on:
+  schedule:
+    - cron: "0 8 * * *"   # daily, 08:00 UTC (~2-3am Central)
+  workflow_dispatch: {}
+permissions:
+  contents: write
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Merge upstream changes into main
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api --method POST "repos/${{ github.repository }}/merge-upstream" -f branch=main || \
+            echo "Nothing to sync (already up to date) or merge not fast-forwardable."
