@@ -804,7 +804,7 @@
     #capstoneGrid.atlas-many{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;min-height:0}
     #capstoneGrid.atlas-many .project{position:relative;inset:auto;width:auto}
     #capstoneGrid.atlas-many .atlas-center,#capstoneGrid.atlas-many .atlas-ring{display:none}
-      #capstoneGrid .project h3{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+    #capstoneGrid .project h3{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
     #capstoneGrid .project .id{font-size:11px;letter-spacing:.06em}
     @media(min-width:801px){#capstoneGrid{min-height:740px}}
   
@@ -823,7 +823,7 @@
     #capstoneGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:auto 180px auto;gap:24px;min-height:850px;padding:32px;align-items:start;background-color:#201a35}
     #capstoneGrid .project{position:relative;inset:auto;width:100%;padding:20px;background:rgba(23,17,41,.96);height:auto}
     #capstoneGrid .p1{grid-column:1;grid-row:1}#capstoneGrid .p5{grid-column:2;grid-row:1}#capstoneGrid .p2{grid-column:3;grid-row:1}
-    #capstoneGrid .p4{grid-column:1;grid-row:3}#capstoneGrid .p6{grid-column:2;grid-row:3}#capstoneGrid .p3{grid-column:3;grid-row:3}
+    #capstoneGrid .p4{grid-column:1;grid-row:2}#capstoneGrid .p6{grid-column:2;grid-row:2}#capstoneGrid .p3{grid-column:3;grid-row:2}
     #capstoneGrid .project h3{display:block;-webkit-line-clamp:unset;overflow:visible;font-size:1.05rem;line-height:1.4;overflow-wrap:anywhere}
     #capstoneGrid .project p{font-size:1rem;line-height:1.5}
     #capstoneGrid .project .id{font-size:.875rem;letter-spacing:.04em}
@@ -963,6 +963,285 @@
     .capstone-credit{margin:12px 0 0;color:var(--muted);font-size:.8rem;line-height:1.6}
     .capstone-credit a{text-decoration:underline;text-underline-offset:3px}
     @media(min-width:1051px){.hero-destinations{justify-self:stretch;width:100%;max-width:none}}
+    /* Compact research timeline */
+    #timeline {
+      padding: 55px 0;
+    }
+
+    #timeline h2 {
+      font-size: clamp(2rem, 3.5vw, 3rem);
+    }
+
+    #timeline .section-head {
+      margin-bottom: 22px;
+    }
+
+    #timeline .timeline-journey {
+      margin-top: 24px;
+    }
+
+    #timeline .journey-copy h3 {
+      font-size: 1.2rem;
+    }
+
+    #timeline .journey-copy p {
+      font-size: .85rem;
+      line-height: 1.45;
+    }
+
+    #timeline .timeline-note {
+      margin-top: 20px;
+    }
+
+    /* Shorter horizontal timeline on wide screens */
+    @media (min-width: 1200px) {
+      #timeline .journey-node {
+        grid-template-rows: 220px 48px 220px;
+      }
+
+      #timeline .journey-node::before {
+        top: 232px;
+        height: 24px;
+      }
+
+      #timeline .journey-number {
+        width: 48px;
+        height: 48px;
+        margin-left: 8px;
+        font-size: .85rem;
+      }
+
+      #timeline .journey-copy {
+        margin: 0 12px 0 31px;
+        padding: 18px 0 0 12px;
+      }
+
+      #timeline .journey-node:nth-child(even) .journey-copy {
+        padding: 0 0 18px 12px;
+      }
+    }
+    /* Tighten the space between About and Capstone */
+    #mission {
+      padding-bottom: 75px;
+    }
+
+    #projects {
+      padding-top: 75px;
+    }
+    #capstoneDialog .project-gallery {
+      display: grid;
+      grid-template-columns: 0.65fr 1fr;
+      gap: 20px;
+      margin-top: 16px;
+      align-items: start;
+    }
+
+    #capstoneDialog .project-gallery img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-width: none;
+      max-height: none;
+      margin: 0;
+      border-radius: 6px;
+    }
+
+    @media (max-width: 600px) {
+      #capstoneDialog .project-gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Smaller section spacing and headings */
+    #projects,
+    #timeline {
+      padding: 45px 0;
+    }
+
+    #projects h2,
+    #timeline h2 {
+      font-size: clamp(2rem, 3.5vw, 3rem);
+    }
+
+    #projects .section-head,
+    #timeline .section-head {
+      margin-bottom: 22px;
+    }
+
+    /* Compact capstone cards */
+    #capstoneGrid .project {
+      padding: 14px;
+    }
+
+    #capstoneGrid .project h3 {
+      font-size: .95rem;
+      line-height: 1.3;
+    }
+
+    #capstoneGrid .project p {
+      font-size: .85rem;
+    }
+
+    #capstoneGrid .project-details-action {
+      margin-top: 10px;
+      padding: 6px 10px;
+      font-size: .8rem;
+    }
+
+    @media (min-width: 801px) {
+      #capstoneGrid {
+        min-height: 0;
+        grid-template-rows: auto auto;
+        gap: 16px;
+        padding: 20px;
+        align-items: stretch;
+
+      }
+
+      #capstoneGrid .atlas-center {
+        width: 90px;
+        height: 90px;
+      }
+
+      #capstoneGrid .atlas-center span {
+        font-size: .55rem;
+      }
+    }
+
+    /* Compact five-semester timeline */
+    #timeline .timeline-journey {
+      margin-top: 20px;
+    }
+
+    #timeline .journey-copy h3 {
+      font-size: 1.15rem;
+      margin: 7px 0;
+    }
+
+    #timeline .journey-copy p {
+      font-size: .82rem;
+      line-height: 1.4;
+    }
+
+    #timeline .timeline-note {
+      margin-top: 16px;
+    }
+
+    @media (min-width: 1200px) {
+      #timeline .journey-node {
+        grid-template-rows: 200px 44px 200px;
+      }
+
+      #timeline .journey-node::before {
+        top: 211px;
+        height: 22px;
+      }
+
+      #timeline .journey-number {
+        width: 44px;
+        height: 44px;
+        margin-left: 10px;
+        font-size: .8rem;
+      }
+
+      #timeline .journey-copy {
+        margin: 0 10px 0 31px;
+        padding: 16px 0 0 10px;
+      }
+
+      #timeline .journey-node:nth-child(even) .journey-copy {
+        padding: 0 0 16px 10px;
+      }
+    }
+
+    /* Group photo: 80% of its previous size */
+    .group-figure {
+      width: 68%;
+      max-width: 768px;
+    }
+
+    @media (max-width: 700px) {
+      .group-figure {
+        width: 80%;
+      }
+    }
+    /* Right-align student names */
+    #capstoneGrid .project > p {
+      text-align: right;
+      margin: 10px 0 0;
+    }
+
+    /* Right-align View details */
+    #capstoneGrid .project .project-details-action {
+      display: block;
+      width: fit-content;
+      margin: 8px 0 0 auto;
+    }
+
+    @media (min-width: 801px) {
+    #capstoneGrid {
+      min-height: 560px;
+      padding: 28px;
+      grid-template-rows: auto auto;
+      row-gap: 100px;
+      column-gap: 28px;
+      align-items: start;
+      align-content: space-between;
+    }
+
+    #capstoneGrid .project {
+      width: 94%;
+      justify-self: center;
+      height: auto;
+      min-height: 0;
+      padding: 12px;
+    }
+
+    #capstoneGrid .project h3 {
+      font-size: .9rem;
+      line-height: 1.25;
+      margin: 0 0 8px;
+    }
+
+    #capstoneGrid .project > p {
+      font-size: .8rem;
+      margin-top: 6px;
+    }
+
+    #capstoneGrid .project .project-details-action {
+      font-size: .75rem;
+      padding: 5px 9px;
+      margin-top: 6px;
+    }
+  }
+  #capstoneGrid .project {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px 12px;
+  align-items: center;
+}
+
+  #capstoneGrid .project > h3 {
+    grid-column: 1 / -1;
+  }
+
+  #capstoneGrid .project > p {
+    grid-column: 1;
+    grid-row: 2;
+    text-align: right;
+    margin: 0;
+  }
+
+  #capstoneGrid .project > .project-details-action,
+  #capstoneGrid .project > details {
+    grid-column: 2;
+    grid-row: 2;
+    margin: 0;
+  }
+
+  #capstoneGrid .project .project-details-action {
+    margin: 0;
+  }
   </style>
 
 
@@ -1058,23 +1337,17 @@
       <div class="container">
         <div class="section-head">
           <div><div class="section-kicker">Student research</div><h2>Capstone projects</h2></div>
-          <p class="section-intro">Research questions, methods, and results from individual student projects.</p>
         </div>
         <div class="atlas" id="capstoneGrid" aria-label="Capstone projects">
           <div class="atlas-ring r1" aria-hidden="true"></div>
           <div class="atlas-ring r2" aria-hidden="true"></div>
           <div class="atlas-ring r3" aria-hidden="true"></div>
-          <div class="atlas-center"><span>Galaxy<br>Evolution<br>VIP</span></div>
-<article class="project static-capstone p1"><div class="id">Senior project 01</div><h3>Dust Through Time: Tracing Attenuation from Reionization to Cosmic Noon</h3><p>Maddie Gerard</p><details><summary class="project-details-action">View details</summary><div class="static-description">My project aims to investigate how the shapes of dust attenuation curves relate to the physical properties of galaxies across cosmic time. I will measure how attenuation curves evolve with redshift in galaxies at z≈2-6, linking these variations to underlying dust and galaxy properties. To do this, I will combine uniform photometric catalogs from the UNICORN survey with NIRSpec/PRISM spectroscopy from the CAPERS program to study the evolution of dust attenuation. Using the SED–fitting code BAGPIPES, I will derive stellar masses, UV spectral slopes, and stellar attenuation curves. By comparing stellar and nebular attenuation at fixed stellar mass and across redshifts, this project will test predictions of dust evolution models and quantify how dust properties relate to galaxy age, star-formation history, and the UV continuum slope as an independent probe of dust geometry and reddening. The combination of uniform photometry, deep spectroscopy, and flexible SED modeling will provide a strong dataset for studying the buildup and transformation of dust during the peak of cosmic star formation.</div></details></article>
-<article class="project static-capstone p2"><div class="id">Senior project 02</div><h3>Studying Balmer line emission flux ratios in EMBER [working title]</h3><p>Ananya Gupta</p><details><summary class="project-details-action">View details</summary><div class="static-description">Using the G395M filter in this EMBER dataset, find a sample of broad-line AGN.
-Study H-alpha/H-beta flux ratios of these AGN by comparing the broad regions of both the emission lines as well as the narrow regions, and seeing if those ratios are the same or not. We’d expect the ratio of the broad H-alpha/broad H-beta to be similar to the ratio of narrow H-alpha/narrow H-beta. If we see a difference in the ratios, that would be interesting, and we could start considering reasons why the object is facing reddening, and whether it’s systematic across the sample (be it dust, etc).
-Furthermore, depending on where we see the flux ratio difference (be it narrow or broad region), it would tell us if the object is obscured by dust evenly or if the galaxy/AGN is more affected, etc.
-
-[I'll give you a better version of this soon, but this is what I have right now]</div></details></article>
-<article class="project static-capstone p3"><div class="id">Senior project 03</div><h3>Narrow-line AGN Selection in Quiescent Galaxies: Exploring AGN Feedback in the Early Universe</h3><p>Daisy Attaway</p><details><summary class="project-details-action">View details</summary><div class="static-description">Massive quiescent galaxies in the early universe are observed as early as 700 million years after the Big Bang, and the primary proposed mechanism of quenching these galaxies is feedback active galactic nuclei (AGN). However, the relationship between AGN and their host galaxies in the early universe remains unclear, especially for narrow-line AGN. I will identify candidate quiescent galaxies at 1 &lt; z &lt; 7 from the RUBIES and EMBER surveys using rest-frame UVJ colors. Using spectral energy distribution (SED) fitting, I will confirm the galaxies' quiescence and identify their star formation histories and possible AGN fraction. To further identify NLAGN, I will use emission line diagnostic diagrams. By exploring quenching timescales and searching for outflows within this sample, I will probe the relationship between NLAGN and their host galaxies.</div></details></article>
-<article class="project static-capstone p4"><div class="id">Senior project 04</div><h3>EMBER: Evaluating Emission-Line Diagnostic Diagrams for High-Redshift Narrow-Line AGN Selection</h3><p>Kyra Sampson</p><details><summary class="project-details-action">View details</summary><div class="static-description">Although the James Webb Space Telescope has enabled the identification of activate galactic nuclei (AGN) in surprising numbers, narrow-line (type 2) AGN (NLAGN) are highly underrepresented in the current literature. However, traditional NLAGN identification methods break down at high redshift due to lower metallicities and higher ionization parameters, conflating active with star-forming galaxies. To address these issues, I sample NLAGN in the EMBER JWST survey at z &gt; 2, where I apply a combination of traditional, recalibrated, and novel emission-line diagnostic diagrams in the optical and UV regimes to select a sample of NLAGN. I look to characterize the physical properties of this NLAGN sample and their host galaxies to better understand the role of AGN in the early Universe, as well as evaluate the validity of emission-line diagnostic diagrams as an identification tool in future work.</div></details></article>
-<article class="project static-capstone p5"><div class="id">Senior project 05</div><h3>Aging Galactic Giants in the COSMOS and CEERS Surveys: The Role of Halo Quenching in the Rapid Evolution of Massive Quiescent Candidates at z&gt;3</h3><p>Cyril John</p><details><summary class="project-details-action">View details</summary><div class="static-description">Massive Quiescent Galaxies (MQGs) at high redshifts have been a center of focus for JWST research because they require unusually rapid evolution to explain their growth and declining star formation before cosmic noon. More specifically, MQGs located in overdense cosmological regions which seed galaxy clusters offer insights into the role of galaxy interaction and dark matter structures in their quenching. My project aims to quantify how dark matter haloes and past merging (as evidenced by active galactic nuclei (AGN) activity) drive star formation and initiate quenching in these MQGs. Thus, I am using photometry from the COSMOS and CEERS JWST surveys to identify MQGs within protocluster environments using Baker et al. (2025) selection criteria and density mapping methods from Kakimoto et al. (2026). I am also using BAGPIPES to analyze their spectra from CAMPFIRE to determine whether these MQGs have synchronized quenching and exhibit strong AGN features. I aim to finally match observed MQGs star formation histories (SFHs) to simulated SFHS from halo growth histories using UniverseMachine catalogs. This work will expand the current understanding of MQG evolution mechanisms at high redshifts.</div></details></article>
-<article class="project static-capstone p6"><div class="id">Senior project 06</div><h3>The hunt for transients</h3><p>Abby Kerrigan</p><details><summary class="project-details-action">View details</summary><div class="static-description">Supernovae (SNe) are indicators of stellar evolution and star forming activity within galaxies, and the connection between SNe type and a galaxy’s star formation rate (SFR) is essential in understanding how stellar populations evolve. With the goal of analyzing the distribution of SNe across host galaxies of varying star formation rate and metallicity, we detect and classify SNe within the Next Generation Deep Extragalactic Exploratory Survey (NGDEEP), using observations from JWST. My project focuses on using multi-epoch imaging to find changes in brightness between image timescales, isolating transient events such as SNe. After detecting transient candidates in NGDEEP, I will expand this pipeline to the JWST Advanced Deep Extragalactic Survey (JADES). This work allows for classification of transients through light curve fitting, and an overall step forward in my goal of studying the relationship between the local population of SNe and host galaxy characteristics.</div></details></article>
+<article class="project static-capstone p1"><h3>Dust Through Time: Tracing Attenuation from Reionization to Cosmic Noon</h3><p>Maddie Gerard</p><details><summary class="project-details-action">View details</summary><div class="static-description">My project aims to investigate how the shapes of dust attenuation curves relate to the physical properties of galaxies across cosmic time. I will measure how attenuation curves evolve with redshift in galaxies at z≈2-6, linking these variations to underlying dust and galaxy properties. To do this, I will combine uniform photometric catalogs from the UNICORN survey with NIRSpec/PRISM spectroscopy from the CAPERS program to study the evolution of dust attenuation. Using the SED–fitting code BAGPIPES, I will derive stellar masses, UV spectral slopes, and stellar attenuation curves. By comparing stellar and nebular attenuation at fixed stellar mass and across redshifts, this project will test predictions of dust evolution models and quantify how dust properties relate to galaxy age, star-formation history, and the UV continuum slope as an independent probe of dust geometry and reddening. The combination of uniform photometry, deep spectroscopy, and flexible SED modeling will provide a strong dataset for studying the buildup and transformation of dust during the peak of cosmic star formation.</div></details></article>
+<article class="project static-capstone p2"><h3>Balmer Decrements in Broad-Line AGN at Redshift 5–7: Probing Differential Dust Reddening Between the BLR and NLR </h3><p>Ananya Gupta</p><details><summary class="project-details-action">View details</summary><div class="static-description">Active galactic nuclei (AGN) are thought to help shape the galaxies that host them, but how much of that influence depends on how dusty the AGN itself is relative to its host remains unclear. If the AGN is systematically more (or less) dust-obscured than the surrounding galaxy, that has direct implications for how we interpret its observed luminosity, black hole mass, and growth history. This question is also directly relevant to little red dots (LRDs), compact, heavily reddened sources at these epochs whose nature is still debated. Testing whether their red colours arise from dusty AGN, and under what dust geometry, is one of the open questions our approach could speak to. The EMBER survey provides a large sample of broad-line AGN in the COSMOS field at redshift 5–7, an epoch early enough that there has been comparatively little cosmic time to build up substantial dust. Using medium-resolution grating spectroscopy, which resolves the Hα and Hβ lines well enough to directly separate their broad and narrow components, we measure the Balmer decrement (Hα/Hβ flux ratio) separately for the broad-line region (BLR) and narrow-line region (NLR) in each object. Under standard photoionisation assumptions, the two decrements should agree; a systematic offset between them would indicate differential reddening between the BLR and NLR, letting us assess whether the AGN is more dust-obscured than its host and whether that dust is distributed with a roughly uniform covering fraction. Extending this comparison across the sample, and to LRDs specifically, could help distinguish between radiative transfer models for these objects: for example, a compact, highly obscured dust screen around the BLR versus a more extended, patchy distribution shared with the host.</div></details></article>
+<article class="project static-capstone p3"><h3>Narrow-line AGN Selection in Quiescent Galaxies: Exploring AGN Feedback in the Early Universe</h3><p>Daisy Attaway</p><details><summary class="project-details-action">View details</summary><div class="static-description">Massive quiescent galaxies in the early universe are observed as early as 700 million years after the Big Bang, and the primary proposed mechanism of quenching these galaxies is feedback active galactic nuclei (AGN). However, the relationship between AGN and their host galaxies in the early universe remains unclear, especially for narrow-line AGN. I will identify candidate quiescent galaxies at 1 &lt; z &lt; 7 from the RUBIES and EMBER surveys using rest-frame UVJ colors. Using spectral energy distribution (SED) fitting, I will confirm the galaxies' quiescence and identify their star formation histories and possible AGN fraction. To further identify NLAGN, I will use emission line diagnostic diagrams. By exploring quenching timescales and searching for outflows within this sample, I will probe the relationship between NLAGN and their host galaxies.</div></details></article>
+<article class="project static-capstone p4"><h3>EMBER: Evaluating Emission-Line Diagnostic Diagrams for High-Redshift Narrow-Line AGN Selection</h3><p>Kyra Sampson</p><details><summary class="project-details-action">View details</summary><div class="static-description">Although the James Webb Space Telescope has enabled the identification of activate galactic nuclei (AGN) in surprising numbers, narrow-line (type 2) AGN (NLAGN) are highly underrepresented in the current literature. However, traditional NLAGN identification methods break down at high redshift due to lower metallicities and higher ionization parameters, conflating active with star-forming galaxies. To address these issues, I sample NLAGN in the EMBER JWST survey at z &gt; 2, where I apply a combination of traditional, recalibrated, and novel emission-line diagnostic diagrams in the optical and UV regimes to select a sample of NLAGN. I look to characterize the physical properties of this NLAGN sample and their host galaxies to better understand the role of AGN in the early Universe, as well as evaluate the validity of emission-line diagnostic diagrams as an identification tool in future work.</div></details></article>
+<article class="project static-capstone p5"><h3>Aging Galactic Giants in the COSMOS and CEERS Surveys: The Role of Halo Quenching in the Rapid Evolution of Massive Quiescent Candidates at z&gt;3</h3><p>Cyril John</p><details><summary class="project-details-action">View details</summary><div class="static-description">Massive Quiescent Galaxies (MQGs) at high redshifts have been a center of focus for JWST research because they require unusually rapid evolution to explain their growth and declining star formation before cosmic noon. More specifically, MQGs located in overdense cosmological regions which seed galaxy clusters offer insights into the role of galaxy interaction and dark matter structures in their quenching. My project aims to quantify how dark matter haloes and past merging (as evidenced by active galactic nuclei (AGN) activity) drive star formation and initiate quenching in these MQGs. Thus, I am using photometry from the COSMOS and CEERS JWST surveys to identify MQGs within protocluster environments using Baker et al. (2025) selection criteria and density mapping methods from Kakimoto et al. (2026). I am also using BAGPIPES to analyze their spectra from CAMPFIRE to determine whether these MQGs have synchronized quenching and exhibit strong AGN features. I aim to finally match observed MQGs star formation histories (SFHs) to simulated SFHS from halo growth histories using UniverseMachine catalogs. This work will expand the current understanding of MQG evolution mechanisms at high redshifts.</div></details></article>
+<article class="project static-capstone p6"><h3>The hunt for transients</h3><p>Abby Kerrigan</p><details><summary class="project-details-action">View details</summary><div class="static-description">Supernovae (SNe) are indicators of stellar evolution and star forming activity within galaxies, and the connection between SNe type and a galaxy’s star formation rate (SFR) is essential in understanding how stellar populations evolve. With the goal of analyzing the distribution of SNe across host galaxies of varying star formation rate and metallicity, we detect and classify SNe within the Next Generation Deep Extragalactic Exploratory Survey (NGDEEP), using observations from JWST. My project focuses on using multi-epoch imaging to find changes in brightness between image timescales, isolating transient events such as SNe. After detecting transient candidates in NGDEEP, I will expand this pipeline to the JWST Advanced Deep Extragalactic Survey (JADES). This work allows for classification of transients through light curve fitting, and an overall step forward in my goal of studying the relationship between the local population of SNe and host galaxy characteristics.</div></details></article>
 
         </div>
 
@@ -1194,7 +1467,7 @@ Furthermore, depending on where we see the flux ratio difference (be it narrow o
           <button type="button" class="people-category" data-group="alumni" aria-pressed="false" aria-controls="peopleGrid">Alumni</button>
         </div>
         <p class="result-count" id="peopleCount" role="status" aria-live="polite"></p>
-        <div class="people-grid" id="peopleGrid"><article class="person-card"><div class="person-photo"><img src="https://sites.utexas.edu/vip/wp-content/uploads/sites/5342/2026/10/proffinkelstein.png" alt="Steven Finkelstein" loading="lazy"></div><div class="person-body"><h3>Steven Finkelstein</h3><p class="person-role">Professor • GEVIP Program PI · </p><p class="person-interest">Broad interests in the formation and evolution of the first stars, galaxies, and supermassive black holes.</p></div></article><article class="person-card"><div class="person-photo"><img src="https://sites.utexas.edu/vip/wp-content/uploads/sites/5342/2025/10/ataylor_square-Anthony-Taylor.jpg" alt="Anthony Taylor" loading="lazy"></div><div class="person-body"><h3>Anthony Taylor</h3><p class="person-role">Postdoctoral Fellow · </p><p class="person-interest">High-redshift galaxies, high-redshift AGN, and JWST spectroscopy.</p></div></article><article class="person-card"><div class="person-photo"><img src="https://sites.utexas.edu/vip/wp-content/uploads/sites/5342/2025/10/tiger.png" alt="Tiger Hsiao" loading="lazy"></div><div class="person-body"><h3>Tiger Hsiao</h3><p class="person-role">Postdoctoral Fellow · </p><p class="person-interest">Investigates the universe’s first light, first stars and galaxies, with particular interest in early chemical abundances.</p></div></article><article class="person-card"><div class="person-photo"><img src="https://sites.utexas.edu/vip/wp-content/uploads/sites/5342/2025/10/natalia.jpeg" alt="Natalia Villanueva" loading="lazy"></div><div class="person-body"><h3>Natalia Villanueva</h3><p class="person-role">PhD Student · </p><p class="person-interest">Studies morphological evolution and spatially resolved galaxy properties using JWST and Euclid imaging.</p></div></article><article class="person-card"><div class="person-photo"><img src="https://sites.utexas.edu/vip/wp-content/uploads/sites/5342/2026/10/ansh.jpg" alt="Ansh Gupta" loading="lazy"></div><div class="person-body"><h3>Ansh Gupta</h3><p class="person-role">PhD Student · </p><p class="person-interest">Active galactic nuclei (AGN) and Little Red Dots (LRDs).</p></div></article><article class="person-card"><div class="person-photo"><img src="https://sites.utexas.edu/vip/wp-content/uploads/sites/5342/2026/10/maddie.jpeg" alt="Maddie Gerard" loading="lazy"></div><div class="person-body"><h3>Maddie Gerard</h3><p class="person-role">Undergraduate student · Senior</p><p class="person-interest"></p><details><summary>Dust Through Time: Tracing Attenuation from Reionization to Cosmic Noon</summary><p class="static-description">My project aims to investigate how the shapes of dust attenuation curves relate to the physical properties of galaxies across cosmic time. I will measure how attenuation curves evolve with redshift in galaxies at z≈2-6, linking these variations to underlying dust and galaxy properties. To do this, I will combine uniform photometric catalogs from the UNICORN survey with NIRSpec/PRISM spectroscopy from the CAPERS program to study the evolution of dust attenuation. Using the SED–fitting code BAGPIPES, I will derive stellar masses, UV spectral slopes, and stellar attenuation curves. By comparing stellar and nebular attenuation at fixed stellar mass and across redshifts, this project will test predictions of dust evolution models and quantify how dust properties relate to galaxy age, star-formation history, and the UV continuum slope as an independent probe of dust geometry and reddening. The combination of uniform photometry, deep spectroscopy, and flexible SED modeling will provide a strong dataset for studying the buildup and transformation of dust during the peak of cosmic star formation.</p></details></div></article><article class="person-card"><div class="person-photo"><img src="https://sites.utexas.edu/vip/wp-content/uploads/sites/5342/2026/10/ananya.jpeg" alt="Ananya Gupta" loading="lazy"></div><div class="person-body"><h3>Ananya Gupta</h3><p class="person-role">Undergraduate student · Senior</p><p class="person-interest"></p><details><summary>Studying Balmer line emission flux ratios in EMBER [working title]</summary><p class="static-description">Using the G395M filter in this EMBER dataset, find a sample of broad-line AGN.
+        <div class="people-grid" id="peopleGrid"><article class="person-card"><div class="person-photo"><img src="https://sites.utexas.edu/vip/wp-content/uploads/sites/5342/2026/10/proffinkelstein.png" alt="Steven Finkelstein" loading="lazy"></div><div class="person-body"><h3>Steven Finkelstein</h3><p class="person-role">Professor • GEVIP Program PI · </p><p class="person-interest">Broad interests in the formation and evolution of the first stars, galaxies, and supermassive black holes.</p></div></article><article class="person-card"><div class="person-photo"><img src="https://sites.utexas.edu/vip/wp-content/uploads/sites/5342/2025/10/ataylor_square-Anthony-Taylor.jpg" alt="Anthony Taylor" loading="lazy"></div><div class="person-body"><h3>Anthony Taylor</h3><p class="person-role">Postdoctoral Fellow · </p><p class="person-interest">High-redshift galaxies, high-redshift AGN, and JWST spectroscopy.</p></div></article><article class="person-card"><div class="person-photo"><img src="https://sites.utexas.edu/vip/wp-content/uploads/sites/5342/2025/10/tiger.png" alt="Tiger Hsiao" loading="lazy"></div><div class="person-body"><h3>Tiger Hsiao</h3><p class="person-role">Postdoctoral Fellow · </p><p class="person-interest">Investigates the universe’s first light, first stars and galaxies, with particular interest in early chemical abundances.</p></div></article><article class="person-card"><div class="person-photo"><img src="https://sites.utexas.edu/vip/wp-content/uploads/sites/5342/2025/10/natalia.jpeg" alt="Natalia Villanueva" loading="lazy"></div><div class="person-body"><h3>Natalia Villanueva</h3><p class="person-role">PhD Student · </p><p class="person-interest">Studies morphological evolution and spatially resolved galaxy properties using JWST and Euclid imaging.</p></div></article><article class="person-card"><div class="person-photo"><img src="https://sites.utexas.edu/vip/wp-content/uploads/sites/5342/2026/10/ansh.jpg" alt="Ansh Gupta" loading="lazy"></div><div class="person-body"><h3>Ansh Gupta</h3><p class="person-role">PhD Student · </p><p class="person-interest">Active galactic nuclei (AGN) and Little Red Dots (LRDs).</p></div></article><article class="person-card"><div class="person-photo"><img src="https://sites.utexas.edu/vip/wp-content/uploads/sites/5342/2026/10/maddie.jpeg" alt="Maddie Gerard" loading="lazy"></div><div class="person-body"><h3>Maddie Gerard</h3><p class="person-role">Undergraduate student · Senior</p><p class="person-interest"></p><details><summary>Dust Through Time: Tracing Attenuation from Reionization to Cosmic Noon</summary><p class="static-description">My project aims to investigate how the shapes of dust attenuation curves relate to the physical properties of galaxies across cosmic time. I will measure how attenuation curves evolve with redshift in galaxies at z≈2-6, linking these variations to underlying dust and galaxy properties. To do this, I will combine uniform photometric catalogs from the UNICORN survey with NIRSpec/PRISM spectroscopy from the CAPERS program to study the evolution of dust attenuation. Using the SED–fitting code BAGPIPES, I will derive stellar masses, UV spectral slopes, and stellar attenuation curves. By comparing stellar and nebular attenuation at fixed stellar mass and across redshifts, this project will test predictions of dust evolution models and quantify how dust properties relate to galaxy age, star-formation history, and the UV continuum slope as an independent probe of dust geometry and reddening. The combination of uniform photometry, deep spectroscopy, and flexible SED modeling will provide a strong dataset for studying the buildup and transformation of dust during the peak of cosmic star formation.</p></details></div></article><article class="person-card"><div class="person-photo"><img src="https://sites.utexas.edu/vip/wp-content/uploads/sites/5342/2026/10/ananya.jpeg" alt="Ananya Gupta" loading="lazy"></div><div class="person-body"><h3>Ananya Gupta</h3><p class="person-role">Undergraduate student · Senior</p><p class="person-interest"></p><details><summary>Studying Balmer line emission flux ratios in EMBER </summary><p class="static-description">Using the G395M filter in this EMBER dataset, find a sample of broad-line AGN.
 Study H-alpha/H-beta flux ratios of these AGN by comparing the broad regions of both the emission lines as well as the narrow regions, and seeing if those ratios are the same or not. We’d expect the ratio of the broad H-alpha/broad H-beta to be similar to the ratio of narrow H-alpha/narrow H-beta. If we see a difference in the ratios, that would be interesting, and we could start considering reasons why the object is facing reddening, and whether it’s systematic across the sample (be it dust, etc).
 Furthermore, depending on where we see the flux ratio difference (be it narrow or broad region), it would tell us if the object is obscured by dust evenly or if the galaxy/AGN is more affected, etc.
 
@@ -1359,8 +1632,8 @@ Furthermore, depending on where we see the flux ratio difference (be it narrow o
       "photo": "https://sites.utexas.edu/vip/wp-content/uploads/sites/5342/2026/10/ananya.jpeg",
       "year": "Senior",
       "position": "Undergraduate student",
-      "projectTitle": "Studying Balmer line emission flux ratios in EMBER [working title]",
-      "projectDescription": "Using the G395M filter in this EMBER dataset, find a sample of broad-line AGN.\nStudy H-alpha/H-beta flux ratios of these AGN by comparing the broad regions of both the emission lines as well as the narrow regions, and seeing if those ratios are the same or not. We’d expect the ratio of the broad H-alpha/broad H-beta to be similar to the ratio of narrow H-alpha/narrow H-beta. If we see a difference in the ratios, that would be interesting, and we could start considering reasons why the object is facing reddening, and whether it’s systematic across the sample (be it dust, etc).\nFurthermore, depending on where we see the flux ratio difference (be it narrow or broad region), it would tell us if the object is obscured by dust evenly or if the galaxy/AGN is more affected, etc.\n\n[I'll give you a better version of this soon, but this is what I have right now]",
+      "projectTitle": "Balmer Decrements in Broad-Line AGN at Redshift 5–7: Probing Differential Dust Reddening Between the BLR and NLR",
+      "projectDescription": "Active galactic nuclei (AGN) are thought to help shape the galaxies that host them, but how much of that influence depends on how dusty the AGN itself is relative to its host remains unclear. If the AGN is systematically more (or less) dust-obscured than the surrounding galaxy, that has direct implications for how we interpret its observed luminosity, black hole mass, and growth history. This question is also directly relevant to little red dots (LRDs), compact, heavily reddened sources at these epochs whose nature is still debated. Testing whether their red colours arise from dusty AGN, and under what dust geometry, is one of the open questions our approach could speak to. The EMBER survey provides a large sample of broad-line AGN in the COSMOS field at redshift 5–7, an epoch early enough that there has been comparatively little cosmic time to build up substantial dust. Using medium-resolution grating spectroscopy, which resolves the Hα and Hβ lines well enough to directly separate their broad and narrow components, we measure the Balmer decrement (Hα/Hβ flux ratio) separately for the broad-line region (BLR) and narrow-line region (NLR) in each object. Under standard photoionisation assumptions, the two decrements should agree; a systematic offset between them would indicate differential reddening between the BLR and NLR, letting us assess whether the AGN is more dust-obscured than its host and whether that dust is distributed with a roughly uniform covering fraction. Extending this comparison across the sample, and to LRDs specifically, could help distinguish between radiative transfer models for these objects: for example, a compact, highly obscured dust screen around the BLR versus a more extended, patchy distribution shared with the host.",
       "interests": "",
       "projectPhoto": "",
       "projectPhotoAlt": ""
@@ -1403,10 +1676,13 @@ Furthermore, depending on where we see the flux ratio difference (be it narrow o
       "photo": "https://sites.utexas.edu/vip/wp-content/uploads/sites/5342/2026/10/abby.jpg",
       "year": "Senior",
       "position": "Undergraduate student",
-      "projectTitle": "The hunt for transients",
-      "projectDescription": "Supernovae (SNe) are indicators of stellar evolution and star forming activity within galaxies, and the connection between SNe type and a galaxy’s star formation rate (SFR) is essential in understanding how stellar populations evolve. With the goal of analyzing the distribution of SNe across host galaxies of varying star formation rate and metallicity, we detect and classify SNe within the Next Generation Deep Extragalactic Exploratory Survey (NGDEEP), using observations from JWST. My project focuses on using multi-epoch imaging to find changes in brightness between image timescales, isolating transient events such as SNe. After detecting transient candidates in NGDEEP, I will expand this pipeline to the JWST Advanced Deep Extragalactic Survey (JADES). This work allows for classification of transients through light curve fitting, and an overall step forward in my goal of studying the relationship between the local population of SNe and host galaxy characteristics.",
+      "projectTitle": "The hunt for Transients: Detecting and Classifying Supernovae using JWST",
+      "projectDescription": "With the goal of analyzing the distribution of SNe across host galaxies of varying star formation rate and metallicity, I detect and classify transients within the Next Generation Deep Extragalactic Exploratory Survey (NGDEEP), a survey that uses dual-epoch imaging from JWST in the GOODS-S field. After I mask bright stars and diffraction spikes, I perform difference imaging. By subtracting epoch images from each other, I create difference images across each filter, which map sources that brighten or dim between image timescales. I isolate these transient events and conduct visual analyses to determine SNe candidates. I plan to expand this detection pipeline to the JWST Advanced Deep Extragalactic Survey (JADES), a dataset whose multi epoch imaging will allow for classification of transients through light curve fitting, and an overall step forward in my goal of studying the relationship between the local population of SNe and host galaxy characteristics.",
       "interests": "",
-      "projectPhoto": "",
+      "projectPhotos": [
+        "images/abby_project1.png",
+        "images/abby_project2.png"
+        ],
       "projectPhotoAlt": ""
     },
     {
@@ -1823,22 +2099,54 @@ Furthermore, depending on where we see the flux ratio difference (be it narrow o
       document.getElementById('peopleCount').textContent=`${filtered.length} of ${members.length} people`;
       document.getElementById('peopleEmpty').hidden=filtered.length>0;
     }
-    function openCapstone(p){
-      const dialog=document.getElementById('capstoneDialog');
+    function openCapstone(p) {
+      const dialog = document.getElementById('capstoneDialog');
+      const content = document.getElementById('capstoneDialogContent');
+      content.replaceChildren();
 
-          const content=document.getElementById('capstoneDialogContent');content.replaceChildren();
-          const title=element('h3','',clean(p.projectTitle)||'Project details forthcoming');title.id='capstoneDialogTitle';content.append(title);
-          const header=element('div','project-dialog-header');
-          const src=safeURL(p.projectPhoto,true);
-          if(src){
-            const img=element('img','capstone-image');img.src=src;img.alt=clean(p.projectPhotoAlt)||`Project image for ${clean(p.projectTitle)}`;
-            img.addEventListener('error',()=>{img.replaceWith(portrait(p));},{once:true});header.append(img);
-          }else if(p.name){header.append(portrait(p));}
-          if(p.name) header.append(element('p','capstone-author',p.name));
-          content.append(header);
-          content.append(element('p','project-description',clean(p.projectDescription)||'Research summary and student information to be added.'));
-          content.append(contactLinks(p));dialog.showModal();
+      const title = element(
+        'h3', '',
+        clean(p.projectTitle) || 'Project details forthcoming'
+      );
+      title.id = 'capstoneDialogTitle';
+      content.append(title);
 
+      const header = element('div', 'project-dialog-header');
+      header.append(portrait(p));
+
+      if (p.name) {
+        header.append(element('p', 'capstone-author', p.name));
+      }
+      content.append(header);
+
+      content.append(element(
+        'p',
+        'project-description',
+        clean(p.projectDescription) ||
+          'Research summary and student information to be added.'
+      ));
+
+      const photos = Array.isArray(p.projectPhotos)
+        ? p.projectPhotos
+        : [p.projectPhoto];
+
+      const gallery = element('div', 'project-gallery');
+
+      photos.forEach((photo, i) => {
+        const src = safeURL(photo, true);
+        if (!src) return;
+
+        const img = element('img');
+        img.src = src;
+        img.alt = clean(p.projectPhotoAlt) ||
+          `Project image ${i + 1} for ${clean(p.projectTitle)}`;
+
+        gallery.append(img);
+      });
+
+      content.append(gallery);
+      content.append(contactLinks(p));
+      dialog.showModal();
     }
     function renderProjects(){
       const grid=document.getElementById('capstoneGrid');
@@ -1849,7 +2157,6 @@ Furthermore, depending on where we see the flux ratio difference (be it narrow o
       entries.forEach((p,i)=>{
         const card=element('button','project p'+(i+1));card.type='button';
         card.id=projectIDs.get(p)||'capstone-placeholder-'+i;
-        const label=element('div');label.append(element('span','dot'),element('span','id','Senior project '+String(i+1).padStart(2,'0')));card.append(label);
         const projectHeading=element('h3','',clean(p.projectTitle)||'Project details forthcoming');projectHeading.title=clean(p.projectTitle);card.append(projectHeading);
         card.append(element('p','',clean(p.name)||'Research summary and student information to be added.'));
         card.append(element('span','project-details-action','View details →'));
